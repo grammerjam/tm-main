@@ -1,0 +1,3 @@
+[submodule "project2/wild-deodorant"]
+	path = project2/wild-deodorant
+	url = git@github.com:smodish-grammerhub/wild-deodorant.git
