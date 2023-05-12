@@ -1,0 +1,54 @@
+.instructions-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.instructions-content {
+  margin-left: 3rem;
+}
+
+.instructions-title {
+  margin-bottom: 0.75rem;
+}
+
+.instructions-copy {
+  margin-bottom: 1.5rem;
+}
+
+.how-it-works-leaf {
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+
+.hands-on-deodorant {
+  width: 80%;
+  justify-self: right;
+}
+
+.title-and-leaf {
+  display: flex;
+}
+
+@media (max-width: $breakpoint-md) {
+  .instructions-container {
+    grid-template-columns: 1fr;
+
+    .hands-on-deodorant {
+      width: 100%;
+      justify-self: none;
+      margin-bottom: 1rem;
+    }
+    .title-and-leaf {
+      display: flex;
+      justify-content: center;
+    }
+    .instructions-copy {
+      text-align: center;
+    }
+    .instructions-content {
+      margin: 0 auto;
+      width: 90%;
+    }
+  }
+}
