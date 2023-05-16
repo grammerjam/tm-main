@@ -1,0 +1,10 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  background-color: $dark-green;
+  color: $white-text;
+  font-size: 0.8rem;
+  font-weight: 600;
+}

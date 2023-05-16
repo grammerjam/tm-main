@@ -1,0 +1,56 @@
+.marketing {
+  background-color: $white-background;
+  padding-bottom: 4rem;
+  border-bottom: 2px solid black;
+
+  .two-up {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+
+    @media screen and (min-width: $breakpoint-md) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+    // border: black 1px solid;
+  }
+
+  .copy {
+    width: 90%;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      padding-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      padding-bottom: 1rem;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $coral;
+      color: $white-text;
+      font-weight: 600;
+      border-radius: 0.313rem;
+      height: 3.125rem;
+      width: 8.125rem;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+      margin-bottom: 0;
+    }
+  }
+
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,71 @@
+.cta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: $coral;
+}
+
+.cta-container {
+  display: grid;
+  justify-content: center;
+  align-self: left;
+  height: 22rem;
+}
+
+.redefined {
+  font-size: 3.125rem;
+  font-weight: 600;
+}
+
+.shopButton {
+  background-color: $dark-green;
+  border-radius: 0.313rem;
+  height: 3.125rem;
+  width: 8.125rem;
+}
+
+.starContainer {
+  position: relative;
+}
+
+.stars {
+  height: 1.5rem;
+}
+
+.trustpilot-logo {
+  height: 1rem;
+}
+
+.deodorant-img {
+  height: 25rem;
+  width: 25rem;
+  object-fit: fill;
+  justify-self: right;
+}
+
+@media (max-width: $breakpoint-md) {
+  .cta {
+    grid-template-columns: 1fr;
+    width: 100%;
+    .redefined,
+    .cta-text,
+    .starContainer {
+      text-align: center;
+    }
+    .cta-text {
+      overflow-wrap: normal;
+    }
+    .cta-container {
+      align-items: center;
+    }
+    .shopButton {
+      margin: 0 auto;
+    }
+    .starContainer {
+      display: flex;
+      flex-direction: column;
+    }
+    .stars {
+      margin-bottom: 1rem;
+    }
+  }
+}

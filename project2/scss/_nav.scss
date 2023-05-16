@@ -1,0 +1,71 @@
+nav {
+  background-color: $coral;
+  padding: 2rem 0;
+
+  .nav-contents {
+    height: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+    @media screen and (min-width: $breakpoint-md) {
+      grid-template-columns: 3fr 1fr 3fr;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white-text;
+      font-size: 1.1rem;
+    }
+
+    .left-nav {
+      justify-content: left;
+      display: none;
+
+      @media screen and (min-width: $breakpoint-md) {
+        display: flex;
+      }
+
+      div {
+        @media screen and (min-width: $breakpoint-lg) {
+          padding-right: 1rem;
+        }
+        @media screen and (min-width: $breakpoint-xl) {
+          padding-right: 3rem;
+        }
+      }
+    }
+
+    .logo {
+      color: white;
+      fill: white;
+      margin: auto;
+
+      width: 7rem;
+      height: 3rem;
+
+      @media screen and (min-width: $breakpoint-lg) {
+        width: 8rem;
+        height: 3rem;
+      }
+    }
+
+    .right-nav {
+      // border: black 1px solid;
+      justify-content: end;
+
+      .btn {
+        margin-left: 1rem;
+        background-color: $dark-green;
+        border-radius: 0.313rem;
+        height: 3.125rem;
+        width: 8.125rem;
+      }
+    }
+
+    .nav-link {
+      margin: 0.5rem;
+    }
+  }
+}
