@@ -1,14 +1,7 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-
-interface CreditCardFormData {
-  cardholderName: string;
-  cardNumber: number;
-  expirationMonth: number;
-  expirationYear: number;
-  cvc: number;
-}
+import CreditCardFormData from "../CreditCardFormData";
 
 const schema = yup
   .object({
@@ -28,10 +21,13 @@ const Form = () => {
   } = useForm<CreditCardFormData>({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = (formData: CreditCardFormData) => {
+    console.log(JSON.stringify(formData));
+  };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register("cardholderName")} />
       <p>{errors.cardholderName?.message}</p>
 
