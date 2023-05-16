@@ -1,7 +1,10 @@
-import React from "react";
-
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <>
+      <div>Start Time: Tuesday, May 16, 3:00pm</div>
+      <div>End Time: ----, May 00, 92:88vm</div>
+    </>
+  );
 };
 
 export default Footer;
