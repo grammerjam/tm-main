@@ -4,8 +4,6 @@ import Card from "./components/Card";
 import Form from "./components/Form";
 import Footer from "./components/Footer";
 
-import "./App.css";
-
 interface ICardData {
   cardNumber: string;
   expirationDate: string;
