@@ -1,5 +1,4 @@
-
-________________________________
+---
 
 3rd Project
 
@@ -39,7 +38,7 @@ Project Options:
 
 Option 1: The provided example and images is for a generic card where both will work on your code to complete one card validation.
 
-Option 2: 
+Option 2:
 Create 2 forms and card displays on the page, one for a Visa card format and for one for an AMEX card.
 
 Happy Coding!
