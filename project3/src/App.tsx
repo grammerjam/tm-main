@@ -2,14 +2,27 @@ import Navbar from "./components/Navbar";
 import Card from "./components/Card";
 import Form from "./components/Form";
 import Footer from "./components/Footer";
-import { useState } from "react";
+import React, { useState } from "react";
 import CreditCardFormData from "./CreditCardFormData";
 
-function App() {
-  const [formData, setFormData] = useState({});
+const defaultFormData: CreditCardFormData = {
+  cardholderName: "",
+  cardNumber: 0,
+  expirationMonth: 0,
+  expirationYear: 0,
+  cvc: 0,
+};
 
-  const onSubmit = (formData: CreditCardFormData) => {
-    console.log(JSON.stringify(formData));
+function App() {
+  const [formData, setFormData] = useState(defaultFormData);
+
+  const onSubmit = (
+    e: React.FormEvent<HTMLInputElement>,
+    formData: CreditCardFormData
+  ) => {
+    e.preventDefault();
+    // debugger;
+    console.log("SUBMIT!" + JSON.stringify(formData));
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
