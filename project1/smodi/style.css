@@ -1,0 +1,27 @@
+.container {
+  margin: 0 auto;
+  width: 370px;
+  display: grid;
+  grid-template-columns: 350px;
+  row-gap: 5px;
+  justify-content: center;
+  align-content: center;
+}
+.square {
+  width: 350px;
+  height: 350px;
+  border: black 2px solid;
+}
+footer {
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 720px) {
+  .container {
+    width: 720px;
+    column-gap: 8px;
+
+    grid-template-columns: repeat(2, 350px);
+  }
+}

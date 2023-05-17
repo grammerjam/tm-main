@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useForm, useController, UseControllerProps } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import CreditCardFormData from "../CreditCardFormData";
@@ -13,9 +13,22 @@ const schema = yup
   })
   .required();
 
+function Input(props: UseControllerProps<CreditCardFormData>) {
+  const { field, fieldState } = useController(props);
+
+  return (
+    <div>
+      <input {...field} placeholder={props.name} />
+      <p>{fieldState.isTouched && "Touched"}</p>
+      <p>{fieldState.isDirty && "Dirty"}</p>
+      <p>{fieldState.invalid ? "invalid" : "valid"}</p>
+    </div>
+  );
+}
+
 const Form = () => {
   const {
-    register,
+    control,
     handleSubmit,
     formState: { errors },
   } = useForm<CreditCardFormData>({
@@ -28,10 +41,16 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("cardholderName")} />
+      {/* <input {...register("cardholderName")} /> */}
+      <Input
+        control={control}
+        name="cardholderName"
+        rules={{ required: true }}
+      />
+
       <p>{errors.cardholderName?.message}</p>
 
-      <input {...register("cardNumber")} />
+      {/* <input {...register("cardNumber")} />
       <p>{errors.cardNumber?.message}</p>
 
       <input {...register("expirationMonth")} />
@@ -41,7 +60,7 @@ const Form = () => {
       <p>{errors.expirationYear?.message}</p>
 
       <input {...register("cvc")} />
-      <p>{errors.cvc?.message}</p>
+      <p>{errors.cvc?.message}</p> */}
 
       <input type="submit" />
     </form>
