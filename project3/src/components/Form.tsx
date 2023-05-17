@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm, useController, UseControllerProps } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -27,6 +28,8 @@ function Input(props: UseControllerProps<CreditCardFormData>) {
 }
 
 const Form = () => {
+  const [value, setValue] = useState(undefined);
+
   const {
     control,
     handleSubmit,
@@ -37,6 +40,10 @@ const Form = () => {
 
   const onSubmit = (formData: CreditCardFormData) => {
     console.log(JSON.stringify(formData));
+  };
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
   };
 
   return (
