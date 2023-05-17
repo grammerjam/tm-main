@@ -1,15 +1,13 @@
-import React, { FC } from 'react'
-import { createRoot } from 'react-dom/client'
+import React, { FC } from "react";
+import { createRoot } from "react-dom/client";
 
-import './index.css'
+import MainPage from "./components/MainPage";
 
-const App = document.getElementById('root')
+import "./index.css";
+
+const App = document.getElementById("root");
 const Root: FC = () => {
-  return (
-    <div className="absolute h-full w-full flex items-center justify-center bg-gray-200">
-      <span className="text-3xl">Hello, world</span>
-    </div>
-  )
-}
+  return <MainPage />;
+};
 
-createRoot(App!).render(<Root />)
+createRoot(App!).render(<Root />);
