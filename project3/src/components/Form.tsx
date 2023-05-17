@@ -28,7 +28,7 @@ function Input(props: UseControllerProps<CreditCardFormData>) {
 }
 
 const Form = () => {
-  const [value, setValue] = useState(undefined);
+  const [value, setValue] = useState({});
 
   const {
     control,
@@ -42,16 +42,13 @@ const Form = () => {
     console.log(JSON.stringify(formData));
   };
 
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  };
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {/* <input {...register("cardholderName")} /> */}
       <Input
         control={control}
-        name="cardholderName"
+        // onChange={(e) => setValue({ ...value, e.target.value })}
+        name="cardNumber"
         rules={{ required: true }}
       />
 
