@@ -1,4 +1,5 @@
-import { useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
+import { useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import CreditCardFormData from "../CreditCardFormData";
@@ -14,6 +15,8 @@ const schema = yup
   .required();
 
 const Form = () => {
+  const [value, setValue] = useState(undefined);
+
   const {
     register,
     handleSubmit,
@@ -24,6 +27,10 @@ const Form = () => {
 
   const onSubmit = (formData: CreditCardFormData) => {
     console.log(JSON.stringify(formData));
+  };
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
   };
 
   return (
