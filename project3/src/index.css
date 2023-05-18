@@ -1,1 +1,13 @@
-@import './assets/styles/atom.css';
+@import "./assets/styles/atom.css";
+
+.input {
+  @apply border border-opacity-0 rounded w-64 bg-slate-100 mb-2 shadow-sm;
+}
+
+.form {
+  @apply flex flex-col w-96 items-center border-2 border-orange-500 mx-auto;
+}
+
+.btn {
+  @apply border rounded w-36 h-10 bg-blue-500;
+}
