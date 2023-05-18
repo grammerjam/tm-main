@@ -5,6 +5,6 @@ export const cardCheck =
 
 export const monthCheck = /^(0[1-9]|1[0-2])$/;
 
-export const yearCheck = /^20[0-9]{2}$/;
+export const yearCheck = /^[0-9]{2}$/;
 
 export const cvcCheck = /^\d{3}$/;
