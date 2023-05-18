@@ -11,7 +11,7 @@ const Form = ({ formData, onSubmit, handleChange }) => {
       />
       <input
         name="cardNumber"
-        type="number"
+        type="text"
         onChange={handleChange}
         value={formData.cardNumber}
         required
@@ -19,7 +19,7 @@ const Form = ({ formData, onSubmit, handleChange }) => {
       />
       <input
         name="expirationMonth"
-        type="number"
+        type="text"
         onChange={handleChange}
         required
         value={formData.expirationMonth}
@@ -27,7 +27,7 @@ const Form = ({ formData, onSubmit, handleChange }) => {
       />
       <input
         name="expirationYear"
-        type="number"
+        type="text"
         onChange={handleChange}
         required
         value={formData.expirationYear}
@@ -35,7 +35,7 @@ const Form = ({ formData, onSubmit, handleChange }) => {
       />
       <input
         name="cvc"
-        type="number"
+        type="text"
         onChange={handleChange}
         required
         value={formData.cvc}

@@ -1,16 +1,55 @@
+import {
+  nameCheck,
+  cardCheck,
+  monthCheck,
+  yearCheck,
+  cvcCheck,
+} from "../utils/validation";
+import Card from "./Card";
+import Footer from "./Footer";
+import Form from "./Form";
+import Navbar from "./Navbar";
 import { useState } from "react";
 
-import Navbar from "./Navbar";
-import Card from "./Card";
-import Form from "./Form";
-import Footer from "./Footer";
+const defaultFormData = {
+  cardholderName: "",
+  cardNumber: "",
+  expirationMonth: "",
+  expirationYear: "",
+  cvc: "",
+};
 
 function MainPage() {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState(defaultFormData);
 
   const onSubmit = (e) => {
     e.preventDefault();
     console.log(JSON.stringify(formData));
+    console.log("name", validateName());
+    console.log("month", validateMonth());
+    console.log("year", validateYear());
+    console.log("card", validateCard());
+    console.log("cvc", validateCVC());
+  };
+
+  const validateName = () => {
+    return nameCheck.test(formData.cardholderName);
+  };
+
+  const validateCard = () => {
+    return cardCheck.test(formData.cardNumber);
+  };
+
+  const validateMonth = () => {
+    return monthCheck.test(formData.expirationMonth);
+  };
+
+  const validateYear = () => {
+    return yearCheck.test(formData.expirationYear);
+  };
+
+  const validateCVC = () => {
+    return cvcCheck.test(formData.cvc);
   };
 
   const handleChange = (e) => {
