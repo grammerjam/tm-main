@@ -4,7 +4,7 @@
   "scripts": {
     "prepare": "cd .. && husky install project3/.husky",
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "serve": "vite preview",
     "format": "prettier --write \"src/**/*.ts\" ",
     "lint": "eslint ./src --fix"
