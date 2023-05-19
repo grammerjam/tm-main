@@ -1,4 +1,6 @@
 [build]
   base    = "project3"
   publish = "/dist/"
-  command = "pnpm run build"
+  command = "CI= pnpm run build"
+
+  
