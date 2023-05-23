@@ -1,4 +1,6 @@
-@import "./assets/styles/atom.css";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 .input {
   @apply border border-opacity-0 rounded w-64 bg-slate-100 mb-2 shadow-sm;
