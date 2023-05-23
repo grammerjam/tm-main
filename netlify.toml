@@ -1,6 +1,0 @@
-[build]
-  base    = "project3"
-  publish = "/dist/"
-  command = ""
-
-  
