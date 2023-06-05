@@ -57,17 +57,20 @@ function MainPage() {
   };
 
   return (
-    <>
+    <div className="w-[375px] mx-auto">
       <Navbar />
-      <Card formData={formData} />
-      <Form
-        formData={formData}
-        onSubmit={onSubmit}
-        handleChange={handleChange}
-        setFormData={setFormData}
-      />
+
+      <div className="bg-mobile grid columns-6">
+        <Card formData={formData} />
+        <Form
+          formData={formData}
+          onSubmit={onSubmit}
+          handleChange={handleChange}
+          setFormData={setFormData}
+        />
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -3,11 +3,11 @@
 @import "tailwindcss/utilities";
 
 .input {
-  @apply border border-opacity-0 rounded w-64 bg-slate-100 mb-2 shadow-sm;
+  @apply border border-opacity-0 rounded w-64 bg-slate-100 mb-2 shadow-sm p-2;
 }
 
 .form {
-  @apply flex flex-col w-96 items-center border-2 border-orange-500 mx-auto;
+  @apply flex flex-col w-96 items-center mx-auto;
 }
 
 .btn {
