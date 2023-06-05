@@ -13,6 +13,17 @@ export default {
         cardBack: "url('/assets/bg-card-back.png')",
       },
     },
+    colors: {
+      gradient: {
+        a: "hsl(var(--color-primary-gradient-a))",
+        b: "hsl(var(--color-primary-gradient-b))",
+      },
+      red: "hsl(var(--color-primary-red))",
+      white: "hsl(var(--color-neutral-white))",
+      lightGrayViolet: "hsl(var(--color-neutral-light-grayish-violet))",
+      darkGrayViolet: "hsl(var(--color-neutral-dark-grayish-violet))",
+      darkViolet: "hsl(var(--color-neutral-very-dark-violet))",
+    },
   },
   plugins: [],
 };
