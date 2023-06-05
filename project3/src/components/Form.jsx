@@ -61,7 +61,7 @@ const Form = ({ formData, onSubmit, handleChange }) => {
           className="input"
         />
 
-        <input type="submit" className="btn" />
+        <input type="submit" className="btn bg-darkViolet text-white" />
       </form>
     </div>
   );
