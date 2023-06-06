@@ -59,6 +59,10 @@ function MainPage() {
   return (
     <>
       <Navbar />
+      <div
+        name="greatDiv"
+        className="bg-[url('../assets/bg-main-mobile.png')]"
+      />
       <Card formData={formData} />
       <Form
         formData={formData}

@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         sans: "Space Grotesk",
       },
+      colors: {
+        // buttonColor: hsl(278, 68%, 11%),
+      },
     },
   },
   plugins: [],
