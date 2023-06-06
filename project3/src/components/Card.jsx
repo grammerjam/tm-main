@@ -3,7 +3,7 @@ const Card = ({ formData }) => {
     <div className="text-white">
       <div className="obverse">
         <img
-          src="/assets/bg-card-front.png"
+          src="./assets/bg-card-front.png"
           alt="card front"
           className="w-64 h-auto"
         />
@@ -14,7 +14,7 @@ const Card = ({ formData }) => {
       </div>
       <div className="inverse">
         <img
-          src="/assets/bg-card-back.png"
+          src="./assets/bg-card-back.png"
           alt="card back"
           className="w-64 h-auto"
         />
