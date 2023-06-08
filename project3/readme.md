@@ -1,21 +1,5 @@
-# Vite React Tailwind Template
+# Mango Grammerjam Project 3
 
-This template provide toolchain below:
+Using React/Vite and TailwindCSS
 
-- Vite
-- React, ReactDOM
-- ESLint
-- Prettier
-- Git Hook (Husky, Lint Staged)
-- TailwindCSS 3
-
-# Usage
-
-```sh
-pnpm i
-pnpm dev
-```
-
-# Screenshot
-
-![](https://i.imgur.com/ftvsXYB.png)
+Deployed at https://mango-grammerjam-project3.netlify.app/
