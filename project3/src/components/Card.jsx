@@ -25,8 +25,8 @@ const Card = ({ formData }) => {
   };
 
   return (
-    <div className="text-white w-full grid grid-cols-1 grid-rows-6 pt-8 px-4">
-      <div className="obverse z-10 col-start-1 row-start-3 row-end-7 grid grid-cols-1 w-72">
+    <div className="text-white w-full grid grid-cols-1 grid-rows-5 pt-8 px-4">
+      <div className="obverse z-10 col-start-1 row-start-3 row-end-6 grid grid-cols-1 w-72">
         <img
           src={cardFront}
           alt="card front"
@@ -37,7 +37,7 @@ const Card = ({ formData }) => {
             <img src={cardLogo} alt="card logo" className="mt-4 ml-4 h-8" />
           </div>
           <div className="flex flex-col mt-8 mx-6">
-            <div className="text-lg tracking-widest mb-3">
+            <div className="text-lg tracking-widest text-center mb-3">
               {cardNumberSpacer(displayNumber)}
             </div>
             <div className="flex justify-between text-xs tracking-widest">
