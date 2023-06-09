@@ -60,7 +60,7 @@ function MainPage() {
     <div className="w-[375px] mx-auto">
       <Navbar />
 
-      <div className="bg-mobile bg-no-repeat grid columns-6">
+      <div className="bg-mobile bg-no-repeat">
         <Card formData={formData} />
         <Form
           formData={formData}
