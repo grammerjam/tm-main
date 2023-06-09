@@ -33,7 +33,7 @@ const Card = ({ formData }) => {
           alt="card back"
           className="w-[280px] h-auto col-start-1 row-start-1"
         />
-        <div className="col-start-1 row-start-1">
+        <div className="col-start-1 row-start-1 mt-16 text-right mr-8">
           <div>{displayCode}</div>
         </div>
       </div>
