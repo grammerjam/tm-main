@@ -14,13 +14,14 @@ const Card = ({ formData }) => {
   const displayCode = formData.cvc === "" ? "000" : formData.cvc;
 
   const cardNumberSpacer = (cardNumber) => {
-    const numArray = cardNumber.replaceAll(" ", "").split("");
+    const numArray = cardNumber.trim().replaceAll(" ", "").split("");
     let spacedCardNumber = [];
     for (let i = 0; i < numArray.length; i++) {
       if (i > 0 && i % 4 === 0) spacedCardNumber.push(" ");
       spacedCardNumber.push(numArray[i]);
     }
-    return spacedCardNumber.join("");
+    console.log(spacedCardNumber);
+    return spacedCardNumber.join("").trim();
   };
 
   return (
@@ -36,7 +37,7 @@ const Card = ({ formData }) => {
             <img src={cardLogo} alt="card logo" className="mt-4 ml-4 h-8" />
           </div>
           <div className="flex flex-col mt-8 mx-6">
-            <div className="text-lg tracking-[.18rem] mb-3">
+            <div className="text-lg tracking-widest mb-3">
               {cardNumberSpacer(displayNumber)}
             </div>
             <div className="flex justify-between text-xs tracking-widest">
