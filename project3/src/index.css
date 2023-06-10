@@ -13,15 +13,3 @@
     --color-neutral-very-dark-violet: 278deg 68% 11%;
   }
 }
-
-.input {
-  @apply border border-opacity-0 rounded w-64 mb-2 shadow-sm p-2;
-}
-
-.form {
-  @apply flex flex-col w-96 items-center mx-auto;
-}
-
-.btn {
-  @apply border rounded w-36 h-10;
-}
