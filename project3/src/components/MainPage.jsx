@@ -21,7 +21,11 @@ const defaultFormData = {
 
 function MainPage() {
   const [formData, setFormData] = useState(defaultFormData);
-  const [nameError, setNameError] = useState(false);
+  const [nameIsValid, setNameIsValid] = useState(true);
+  const [cardIsValid, setCardIsValid] = useState(true);
+  const [monthIsValid, setMonthIsValid] = useState(true);
+  const [yearIsValid, setYearIsValid] = useState(true);
+  const [cvcIsValid, setCvcIsValid] = useState(true);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -34,25 +38,38 @@ function MainPage() {
   };
 
   const validateName = () => {
-    if (!nameCheck.test(formData.cardholderName)) {
-      setNameError((nameError) => !nameError);
+    if (nameCheck.test(formData.cardholderName)) {
+      return setNameIsValid(true);
     }
+    return setNameIsValid(false);
   };
 
   const validateCard = () => {
-    return cardCheck.test(formData.cardNumber);
+    if (cardCheck.test(formData.cardNumber)) {
+      return setCardIsValid(true);
+    }
+    return setCardIsValid(false);
   };
 
   const validateMonth = () => {
-    return monthCheck.test(formData.expirationMonth);
+    if (monthCheck.test(formData.expirationMonth)) {
+      return setMonthIsValid(true);
+    }
+    return setMonthIsValid(false);
   };
 
   const validateYear = () => {
-    return yearCheck.test(formData.expirationYear);
+    if (yearCheck.test(formData.expirationYear)) {
+      return setYearIsValid(true);
+    }
+    return setYearIsValid(false);
   };
 
   const validateCVC = () => {
-    return cvcCheck.test(formData.cvc);
+    if (cvcCheck.test(formData.cvc)) {
+      return setCvcIsValid(true);
+    }
+    return setCvcIsValid(false);
   };
 
   const handleChange = (e) => {
@@ -67,7 +84,11 @@ function MainPage() {
         <Card formData={formData} />
         <Form
           formData={formData}
-          nameError={nameError}
+          nameIsValid={nameIsValid}
+          cardIsValid={cardIsValid}
+          monthIsValid={monthIsValid}
+          yearIsValid={yearIsValid}
+          cvcIsValid={cvcIsValid}
           onSubmit={onSubmit}
           handleChange={handleChange}
           setFormData={setFormData}
