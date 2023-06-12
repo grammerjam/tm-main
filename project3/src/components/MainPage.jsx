@@ -21,6 +21,7 @@ const defaultFormData = {
 
 function MainPage() {
   const [formData, setFormData] = useState(defaultFormData);
+  const [nameError, setNameError] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -33,7 +34,9 @@ function MainPage() {
   };
 
   const validateName = () => {
-    return nameCheck.test(formData.cardholderName);
+    if (!nameCheck.test(formData.cardholderName)) {
+      setNameError((nameError) => !nameError);
+    }
   };
 
   const validateCard = () => {
@@ -64,6 +67,7 @@ function MainPage() {
         <Card formData={formData} />
         <Form
           formData={formData}
+          nameError={nameError}
           onSubmit={onSubmit}
           handleChange={handleChange}
           setFormData={setFormData}

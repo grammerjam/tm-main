@@ -6,7 +6,7 @@ import {
   cvcCheck,
 } from "../utils/validation";
 
-const Form = ({ formData, onSubmit, handleChange }) => {
+const Form = ({ formData, onSubmit, handleChange, nameError }) => {
   return (
     <div className="mt-12 text-sm tracking-widest">
       <form onSubmit={onSubmit} className="flex flex-col px-4 mx-auto">
