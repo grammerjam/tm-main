@@ -77,10 +77,10 @@ function MainPage() {
   };
 
   return (
-    <div className="w-[375px] mx-auto">
+    <div className="w-[375px] md:w-[1440px] mx-auto">
       <Navbar />
 
-      <div className="bg-mobile bg-no-repeat">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:h-[900px] bg-mobile md:bg-desktop bg-no-repeat">
         <Card formData={formData} />
         <Form
           formData={formData}
