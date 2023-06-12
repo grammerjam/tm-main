@@ -31,6 +31,13 @@ const Form = ({
               nameIsValid ? "border-lightGrayViolet" : "border-red"
             } placeholder:text-lightGrayViolet rounded w-full shadow-sm p-2 mt-1`}
           />
+          {nameIsValid ? (
+            ""
+          ) : (
+            <p className="text-red text-xs tracking-normal mt-2">
+              Name is required buddy
+            </p>
+          )}
         </div>
         <div className="mt-4">
           <h2>CARD NUMBER</h2>
@@ -42,8 +49,15 @@ const Form = ({
             placeholder="e.g. 1234 5678 9123 0000"
             className={`border ${
               cardIsValid ? "border-lightGrayViolet" : "border-red"
-            }  placeholder:text-lightGrayViolet rounded w-full shadow-sm p-3 mt-1 mb-2`}
+            }  placeholder:text-lightGrayViolet rounded w-full shadow-sm p-3 mt-1`}
           />
+          {cardIsValid ? (
+            ""
+          ) : (
+            <p className="text-red text-xs tracking-normal mt-2">
+              Wrong format, numbers only
+            </p>
+          )}
         </div>
         <div className="flex mt-4">
           <div className="w-2/3">
@@ -57,7 +71,7 @@ const Form = ({
                 placeholder="MM"
                 className={`border ${
                   monthIsValid ? "border-lightGrayViolet" : "border-red"
-                } placeholder:text-lightGrayViolet rounded w-20 mb-2 shadow-sm p-2`}
+                } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2`}
               />
               <input
                 name="expirationYear"
@@ -67,9 +81,16 @@ const Form = ({
                 placeholder="YY"
                 className={`border ${
                   yearIsValid ? "border-lightGrayViolet" : "border-red"
-                } placeholder:text-lightGrayViolet rounded w-20 mb-2 shadow-sm p-2 ml-2`}
+                } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2 ml-2`}
               />
             </div>
+            {monthIsValid && yearIsValid ? (
+              ""
+            ) : (
+              <p className="text-red text-xs tracking-normal mt-2">
+                Can't be blank
+              </p>
+            )}
           </div>
           <div>
             <h2>CVC</h2>
@@ -83,6 +104,13 @@ const Form = ({
                 cvcIsValid ? "border-lightGrayViolet" : "border-red"
               } placeholder:text-lightGrayViolet rounded w-full shadow-sm p-2 mt-1`}
             />
+            {cvcIsValid ? (
+              ""
+            ) : (
+              <p className="text-red text-xs tracking-normal mt-2">
+                Can't be blank
+              </p>
+            )}
           </div>
         </div>
 
