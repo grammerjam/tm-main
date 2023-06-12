@@ -6,9 +6,18 @@ import {
   cvcCheck,
 } from "../utils/validation";
 
-const Form = ({ formData, onSubmit, handleChange }) => {
+const Form = ({
+  formData,
+  onSubmit,
+  handleChange,
+  nameIsValid,
+  cardIsValid,
+  monthIsValid,
+  yearIsValid,
+  cvcIsValid,
+}) => {
   return (
-    <div className="mt-12 text-sm tracking-widest">
+    <div className="mt-12 text-sm text-darkViolet tracking-widest">
       <form onSubmit={onSubmit} className="flex flex-col px-4 mx-auto">
         <div>
           <h2>CARDHOLDER NAME</h2>
@@ -16,12 +25,19 @@ const Form = ({ formData, onSubmit, handleChange }) => {
             name="cardholderName"
             type="text"
             onChange={handleChange}
-            required
             value={formData.cardholderName}
             placeholder="e.g. Jane Appleseed"
-            pattern="^[a-zA-Z\s]+$"
-            className="border border-lightGrayViolet placeholder:text-lightGrayViolet text-darkGrayViolet rounded w-full shadow-sm p-2 mt-1"
+            className={`border ${
+              nameIsValid ? "border-lightGrayViolet" : "border-red"
+            } placeholder:text-lightGrayViolet rounded w-full shadow-sm p-2 mt-1`}
           />
+          {nameIsValid ? (
+            ""
+          ) : (
+            <p className="text-red text-xs tracking-normal mt-2">
+              Name is required buddy
+            </p>
+          )}
         </div>
         <div className="mt-4">
           <h2>CARD NUMBER</h2>
@@ -30,11 +46,18 @@ const Form = ({ formData, onSubmit, handleChange }) => {
             type="text"
             onChange={handleChange}
             value={formData.cardNumber}
-            required
             placeholder="e.g. 1234 5678 9123 0000"
-            pattern="^(1298|1267|4512|4567|8901|8933)([\-\s]?[0-9]{4}){3}$"
-            className="border border-lightGrayViolet placeholder:text-lightGrayViolet rounded w-full shadow-sm p-3 mt-1 mb-2"
+            className={`border ${
+              cardIsValid ? "border-lightGrayViolet" : "border-red"
+            }  placeholder:text-lightGrayViolet rounded w-full shadow-sm p-3 mt-1`}
           />
+          {cardIsValid ? (
+            ""
+          ) : (
+            <p className="text-red text-xs tracking-normal mt-2">
+              Wrong format, numbers only
+            </p>
+          )}
         </div>
         <div className="flex mt-4">
           <div className="w-2/3">
@@ -44,23 +67,30 @@ const Form = ({ formData, onSubmit, handleChange }) => {
                 name="expirationMonth"
                 type="text"
                 onChange={handleChange}
-                required
                 value={formData.expirationMonth}
                 placeholder="MM"
-                pattern="^(0[1-9]|1[0-2])$"
-                className="border border-lightGrayViolet placeholder:text-lightGrayViolet rounded w-20 mb-2 shadow-sm p-2"
+                className={`border ${
+                  monthIsValid ? "border-lightGrayViolet" : "border-red"
+                } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2`}
               />
               <input
                 name="expirationYear"
                 type="text"
                 onChange={handleChange}
-                required
                 value={formData.expirationYear}
                 placeholder="YY"
-                pattern="^[0-9]{2}$"
-                className="border border-lightGrayViolet placeholder:text-lightGrayViolet rounded w-20 mb-2 shadow-sm p-2 ml-2"
+                className={`border ${
+                  yearIsValid ? "border-lightGrayViolet" : "border-red"
+                } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2 ml-2`}
               />
             </div>
+            {monthIsValid && yearIsValid ? (
+              ""
+            ) : (
+              <p className="text-red text-xs tracking-normal mt-2">
+                Can't be blank
+              </p>
+            )}
           </div>
           <div>
             <h2>CVC</h2>
@@ -68,12 +98,19 @@ const Form = ({ formData, onSubmit, handleChange }) => {
               name="cvc"
               type="text"
               onChange={handleChange}
-              required
               value={formData.cvc}
               placeholder="e.g. 123"
-              pattern="^\d{3}$"
-              className="border border-lightGrayViolet placeholder:text-lightGrayViolet rounded w-full shadow-sm p-2 mt-1"
+              className={`border ${
+                cvcIsValid ? "border-lightGrayViolet" : "border-red"
+              } placeholder:text-lightGrayViolet rounded w-full shadow-sm p-2 mt-1`}
             />
+            {cvcIsValid ? (
+              ""
+            ) : (
+              <p className="text-red text-xs tracking-normal mt-2">
+                Can't be blank
+              </p>
+            )}
           </div>
         </div>
 
