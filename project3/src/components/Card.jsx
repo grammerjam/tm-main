@@ -25,8 +25,8 @@ const Card = ({ formData }) => {
   };
 
   return (
-    <div className="text-white w-full grid grid-cols-1 grid-rows-5 pt-8 px-4">
-      <div className="obverse z-10 col-start-1 row-start-3 row-end-6 grid grid-cols-1 w-72">
+    <div className="text-white w-full md:w-96 md:grid-rows-2 md:gap-4 md:self-center md:justify-self-end grid grid-cols-1 grid-rows-5 pt-8 px-4">
+      <div className="obverse z-10 col-start-1 row-start-3 md:row-start-1 md:row-end-2 row-end-6 grid grid-cols-1 w-72">
         <img
           src={cardFront}
           alt="card front"
@@ -49,7 +49,7 @@ const Card = ({ formData }) => {
           </div>
         </div>
       </div>
-      <div className="inverse col-start-1 row-start-1 row-end-4 justify-self-end grid grid-cols-1 w-72">
+      <div className="inverse col-start-1 row-start-1 md:row-start-2 md:row-end-3 row-end-4 justify-self-end grid grid-cols-1 w-72">
         <img
           src={cardBack}
           alt="card back"
