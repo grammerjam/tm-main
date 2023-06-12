@@ -17,7 +17,7 @@ const Form = ({
   cvcIsValid,
 }) => {
   return (
-    <div className="mt-12 text-sm text-darkViolet tracking-widest">
+    <div className="mt-12 text-sm text-darkViolet md:self-center tracking-widest">
       <form onSubmit={onSubmit} className="flex flex-col px-4 mx-auto">
         <div>
           <h2>CARDHOLDER NAME</h2>
@@ -29,7 +29,7 @@ const Form = ({
             placeholder="e.g. Jane Appleseed"
             className={`border ${
               nameIsValid ? "border-lightGrayViolet" : "border-red"
-            } placeholder:text-lightGrayViolet rounded w-full shadow-sm p-2 mt-1`}
+            } placeholder:text-lightGrayViolet rounded w-full md:w-80 shadow-sm p-2 mt-1`}
           />
           {nameIsValid ? (
             ""
@@ -49,7 +49,7 @@ const Form = ({
             placeholder="e.g. 1234 5678 9123 0000"
             className={`border ${
               cardIsValid ? "border-lightGrayViolet" : "border-red"
-            }  placeholder:text-lightGrayViolet rounded w-full shadow-sm p-3 mt-1`}
+            }  placeholder:text-lightGrayViolet rounded w-full md:w-80 shadow-sm p-3 mt-1`}
           />
           {cardIsValid ? (
             ""
@@ -60,7 +60,7 @@ const Form = ({
           )}
         </div>
         <div className="flex mt-4">
-          <div className="w-2/3">
+          <div className="w-2/3 md:w-1/4">
             <h2>Exp. Date (MM/YY)</h2>
             <div className="flex mt-1">
               <input
@@ -92,7 +92,7 @@ const Form = ({
               </p>
             )}
           </div>
-          <div>
+          <div className="ml-6">
             <h2>CVC</h2>
             <input
               name="cvc"
@@ -102,7 +102,7 @@ const Form = ({
               placeholder="e.g. 123"
               className={`border ${
                 cvcIsValid ? "border-lightGrayViolet" : "border-red"
-              } placeholder:text-lightGrayViolet rounded w-full shadow-sm p-2 mt-1`}
+              } placeholder:text-lightGrayViolet rounded w-full md:w-32 shadow-sm p-2 mt-1`}
             />
             {cvcIsValid ? (
               ""
@@ -117,7 +117,7 @@ const Form = ({
         <input
           type="submit"
           value="Confirm"
-          className="border rounded-md h-10 bg-darkViolet text-white w-full mt-6"
+          className="border rounded-md h-10 bg-darkViolet text-white w-full md:w-80 mt-6"
         />
       </form>
     </div>
