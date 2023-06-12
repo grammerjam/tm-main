@@ -17,7 +17,7 @@ const Form = ({
   cvcIsValid,
 }) => {
   return (
-    <div className="mt-12 text-sm tracking-widest">
+    <div className="mt-12 text-sm text-darkViolet tracking-widest">
       <form onSubmit={onSubmit} className="flex flex-col px-4 mx-auto">
         <div>
           <h2>CARDHOLDER NAME</h2>
@@ -29,7 +29,7 @@ const Form = ({
             placeholder="e.g. Jane Appleseed"
             className={`border ${
               nameIsValid ? "border-lightGrayViolet" : "border-red"
-            } placeholder:text-lightGrayViolet text-darkGrayViolet rounded w-full shadow-sm p-2 mt-1`}
+            } placeholder:text-lightGrayViolet rounded w-full shadow-sm p-2 mt-1`}
           />
         </div>
         <div className="mt-4">
@@ -42,7 +42,7 @@ const Form = ({
             placeholder="e.g. 1234 5678 9123 0000"
             className={`border ${
               cardIsValid ? "border-lightGrayViolet" : "border-red"
-            }  placeholder:text-lightGrayViolet text-darkGrayViolet rounded w-full shadow-sm p-3 mt-1 mb-2`}
+            }  placeholder:text-lightGrayViolet rounded w-full shadow-sm p-3 mt-1 mb-2`}
           />
         </div>
         <div className="flex mt-4">
