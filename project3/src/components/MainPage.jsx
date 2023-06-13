@@ -80,7 +80,7 @@ function MainPage() {
     <div className="w-[375px] md:w-[1440px] mx-auto">
       <Navbar />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 md:h-[900px] bg-mobile md:bg-desktop bg-no-repeat">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 md:h-[900px] bg-mobile md:bg-desktop bg-no-repeat">
         <Card formData={formData} />
         <Form
           formData={formData}

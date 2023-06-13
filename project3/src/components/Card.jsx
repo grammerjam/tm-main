@@ -25,8 +25,8 @@ const Card = ({ formData }) => {
   };
 
   return (
-    <div className="text-white w-full md:w-96 md:grid-rows-2 md:gap-4 md:self-center md:justify-self-end grid grid-cols-1 grid-rows-5 pt-8 px-4">
-      <div className="obverse z-10 col-start-1 row-start-3 md:row-start-1 md:row-end-2 row-end-6 grid grid-cols-1 w-72">
+    <div className="text-white w-11/12 justify-self-center md:w-4/5 md:grid-rows-2 md:gap-10 md:self-center md:justify-self-end grid grid-cols-1 grid-rows-5 md:grid-cols-3 md:grid-rows-2 mt-8 md:mt-0">
+      <div className="obverse z-10 col-start-1 row-start-3 md:row-start-1 md:row-end-2 row-end-6 grid grid-cols-1 w-72 md:w-[450px]">
         <img
           src={cardFront}
           alt="card front"
@@ -34,13 +34,13 @@ const Card = ({ formData }) => {
         />
         <div className="col-start-1 row-start-1 flex flex-col">
           <div>
-            <img src={cardLogo} alt="card logo" className="mt-4 ml-4 h-8" />
+            <img src={cardLogo} alt="card logo" className="mt-4 md:mt-6 ml-4 md:ml-6 h-8 md:h-12" />
           </div>
-          <div className="flex flex-col mt-8 mx-6">
-            <div className="text-lg tracking-widest text-center mb-3">
+          <div className="flex flex-col mt-8 md:mt-16 mx-6">
+            <div className="text-lg md:text-3xl tracking-widest text-center">
               {cardNumberSpacer(displayNumber)}
             </div>
-            <div className="flex justify-between text-xs tracking-widest">
+            <div className="flex justify-between text-xs md:text-sm tracking-widest md:tracking-[.2em] mt-3 md:mt-6">
               <div>{displayName.toUpperCase()}</div>
               <div>
                 {displayMonth}/{displayYear}
@@ -49,14 +49,14 @@ const Card = ({ formData }) => {
           </div>
         </div>
       </div>
-      <div className="inverse col-start-1 row-start-1 md:row-start-2 md:row-end-3 row-end-4 justify-self-end grid grid-cols-1 w-72">
+      <div className="inverse col-start-1 md:col-start-2 md:col-span-2 row-start-1 md:row-start-2 md:row-end-3 row-end-4 justify-self-end grid grid-cols-1 w-72 md:w-[450px]">
         <img
           src={cardBack}
           alt="card back"
           className="h-auto col-start-1 row-start-1"
         />
-        <div className="col-start-1 row-start-1 pt-1 text-right mt-[4.15rem] mr-8">
-          <div className="text-xs">{displayCode}</div>
+        <div className="col-start-1 row-start-1 pt-1 text-right mt-[4.15rem] md:mt-[6.6rem] mr-8 md:mr-14">
+          <div className="text-xs md:text-sm md:tracking-[.2em]">{displayCode}</div>
         </div>
       </div>
     </div>
