@@ -23,6 +23,7 @@ export default {
       lightGrayViolet: "hsl(var(--color-neutral-light-grayish-violet))",
       darkGrayViolet: "hsl(var(--color-neutral-dark-grayish-violet))",
       darkViolet: "hsl(var(--color-neutral-very-dark-violet))",
+      grayText: "#908c93",
     },
   },
   plugins: [],
