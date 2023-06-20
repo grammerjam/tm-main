@@ -17,6 +17,7 @@ const Form = ({
   yearIsValid,
   cvcIsValid,
   formSubmitted,
+  setFormSubmitted,
   formIsValid,
 }) => {
   return (
@@ -28,7 +29,7 @@ const Form = ({
           (formSubmitted ? "grid-rows-1" : "grid-rows-4")
         }
       >
-        {!formSubmitted ? (
+        {!formSubmitted || !formIsValid ? (
           <>
             <div className="col-span-4">
               <h2>CARDHOLDER NAME</h2>
@@ -40,15 +41,17 @@ const Form = ({
                 placeholder="e.g. Jane Appleseed"
                 maxLength="24"
                 className={`border ${
-                  nameIsValid ? "border-lightGrayViolet" : "border-red"
+                  !nameIsValid && formSubmitted
+                    ? "border-red"
+                    : "border-lightGrayViolet"
                 } placeholder:text-lightGrayViolet rounded w-full p-3 mt-1 md:placeholder:text-base`}
               />
-              {nameIsValid ? (
-                ""
-              ) : (
+              {!nameIsValid && formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
                   Name is required buddy
                 </p>
+              ) : (
+                ""
               )}
             </div>
             <div className="col-span-4">
@@ -58,18 +61,20 @@ const Form = ({
                 type="text"
                 onChange={handleChange}
                 value={formData.cardNumber}
-                maxLength="18"
+                maxLength="19"
                 placeholder="e.g. 1234 5678 9123 0000"
                 className={`border ${
-                  cardIsValid ? "border-lightGrayViolet" : "border-red"
+                  !cardIsValid && formSubmitted
+                    ? "border-red"
+                    : "border-lightGrayViolet"
                 }  placeholder:text-lightGrayViolet focus:border-gradient-a rounded w-full shadow-sm p-3 mt-1 md:placeholder:text-base`}
               />
-              {cardIsValid ? (
-                ""
-              ) : (
+              {!cardIsValid && formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
                   Wrong format, numbers only
                 </p>
+              ) : (
+                ""
               )}
             </div>
             <div className="col-span-2">
@@ -83,7 +88,9 @@ const Form = ({
                   placeholder="MM"
                   maxLength="2"
                   className={`border ${
-                    monthIsValid ? "border-lightGrayViolet" : "border-red"
+                    !monthIsValid && formSubmitted
+                      ? "border-red"
+                      : "border-lightGrayViolet"
                   } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2 md:placeholder:text-base`}
                 />
                 <input
@@ -94,16 +101,18 @@ const Form = ({
                   placeholder="YY"
                   maxLength="2"
                   className={`border ${
-                    yearIsValid ? "border-lightGrayViolet" : "border-red"
+                    !yearIsValid && formSubmitted
+                      ? "border-red"
+                      : "border-lightGrayViolet"
                   } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2 ml-2 md:placeholder:text-base`}
                 />
               </div>
-              {monthIsValid && yearIsValid ? (
-                ""
-              ) : (
+              {!monthIsValid && !yearIsValid && formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
                   Can't be blank
                 </p>
+              ) : (
+                ""
               )}
             </div>
             <div className="col-span-2">
@@ -116,15 +125,17 @@ const Form = ({
                 placeholder="e.g. 123"
                 maxLength="3"
                 className={`border ${
-                  cvcIsValid ? "border-lightGrayViolet" : "border-red"
+                  !cvcIsValid && formSubmitted
+                    ? "border-red"
+                    : "border-lightGrayViolet"
                 } placeholder:text-lightGrayViolet rounded w-full shadow-sm p-2 mt-1 md:placeholder:text-base`}
               />
-              {cvcIsValid ? (
-                ""
-              ) : (
+              {!cvcIsValid && formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
                   Can't be blank
                 </p>
+              ) : (
+                ""
               )}
             </div>
 

@@ -21,11 +21,11 @@ const defaultFormData = {
 
 function MainPage() {
   const [formData, setFormData] = useState(defaultFormData);
-  const [nameIsValid, setNameIsValid] = useState(true);
-  const [cardIsValid, setCardIsValid] = useState(true);
-  const [monthIsValid, setMonthIsValid] = useState(true);
-  const [yearIsValid, setYearIsValid] = useState(true);
-  const [cvcIsValid, setCvcIsValid] = useState(true);
+  const [nameIsValid, setNameIsValid] = useState(false);
+  const [cardIsValid, setCardIsValid] = useState(false);
+  const [monthIsValid, setMonthIsValid] = useState(false);
+  const [yearIsValid, setYearIsValid] = useState(false);
+  const [cvcIsValid, setCvcIsValid] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formIsValid, setFormIsValid] = useState(false);
 
@@ -38,15 +38,16 @@ function MainPage() {
   }, [formSubmitted]);
 
   const validateName = () => {
-    return nameCheck.test(formData.cardholderName.trim());
-    // let validName = formData.cardholderName.trim();
-    // if (nameCheck.test(validName)) {
-    //   setNameIsValid(true);
-    // }
+    let validName = formData.cardholderName.trim();
+    if (nameCheck.test(validName)) {
+      setNameIsValid(true);
+      return true;
+    }
+    setNameIsValid(false);
+    return false;
   };
 
   const validateCard = () => {
-    // return cardCheck.test(formData.cardNumber.trim());
     let validCard = formData.cardNumber.trim();
     if (cardCheck.test(validCard)) {
       setCardIsValid(true);
@@ -56,39 +57,34 @@ function MainPage() {
     return false;
   };
 
-  // if (
-  //   validateName() &&
-  //   validateCard() &&
-  //   monthIsValid &&
-  //   yearIsValid &&
-  //   cvcIsValid &&
-  //   formSubmitted
-  // ) {
-  //   setFormIsValid(true);
-  // }
-
   const validateMonth = () => {
-    return monthCheck.test(formData.expirationMonth);
-    // setMonthIsValid(false);
-    // if (monthCheck.test(formData.expirationMonth)) {
-    //   setMonthIsValid(true);
-    // }
+    setMonthIsValid(false);
+    if (monthCheck.test(formData.expirationMonth)) {
+      setMonthIsValid(true);
+      return true;
+    }
+    setMonthIsValid(false);
+    return false;
   };
 
   const validateYear = () => {
-    return yearCheck.test(formData.expirationYear);
-    // setYearIsValid(false);
-    // if (yearCheck.test(formData.expirationYear)) {
-    //   setYearIsValid(true);
-    // }
+    setYearIsValid(false);
+    if (yearCheck.test(formData.expirationYear)) {
+      setYearIsValid(true);
+      return true;
+    }
+    setYearIsValid(false);
+    return false;
   };
 
   const validateCVC = () => {
-    return cvcCheck.test(formData.cvc);
-    // setCvcIsValid(false);
-    // if (cvcCheck.test(formData.cvc)) {
-    //   setCvcIsValid(true);
-    // }
+    setCvcIsValid(false);
+    if (cvcCheck.test(formData.cvc)) {
+      setCvcIsValid(true);
+      return true;
+    }
+    setCvcIsValid(false);
+    return false;
   };
 
   const runTests = () => {
@@ -99,11 +95,12 @@ function MainPage() {
       validateCard() &&
       validateCVC()
     ) {
+      setFormIsValid(true);
       return true;
     }
     return false;
   };
-  console.log("run test", runTests());
+  // console.log("run test", runTests());
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -111,6 +108,7 @@ function MainPage() {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    runTests();
     setFormSubmitted(true);
   };
 
@@ -128,6 +126,7 @@ function MainPage() {
           yearIsValid={yearIsValid}
           cvcIsValid={cvcIsValid}
           formSubmitted={formSubmitted}
+          setFormSubmitted={setFormSubmitted}
           formIsValid={formIsValid}
           onSubmit={onSubmit}
           handleChange={handleChange}
