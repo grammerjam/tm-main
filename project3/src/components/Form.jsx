@@ -19,6 +19,7 @@ const Form = ({
   formSubmitted,
   setFormSubmitted,
   formIsValid,
+  resetForm,
 }) => {
   return (
     <div className="text-sm text-darkViolet md:self-center tracking-widest w-11/12 md:w-8/12 justify-self-center">
@@ -159,6 +160,7 @@ const Form = ({
               </p>
             </div>
             <input
+              onClick={resetForm}
               type="submit"
               value="Continue"
               className="border rounded-md h-14 bg-darkViolet text-white text-lg w-full col-span-4"

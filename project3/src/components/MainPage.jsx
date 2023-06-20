@@ -9,7 +9,7 @@ import Card from "./Card";
 import Footer from "./Footer";
 import Form from "./Form";
 import Navbar from "./Navbar";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const defaultFormData = {
   cardholderName: "",
@@ -28,14 +28,6 @@ function MainPage() {
   const [cvcIsValid, setCvcIsValid] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formIsValid, setFormIsValid] = useState(false);
-
-  useEffect(() => {
-    console.log("test");
-
-    if (runTests()) {
-      setFormIsValid(true);
-    }
-  }, [formSubmitted]);
 
   const validateName = () => {
     let validName = formData.cardholderName.trim();
@@ -100,7 +92,6 @@ function MainPage() {
     }
     return false;
   };
-  // console.log("run test", runTests());
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -110,6 +101,17 @@ function MainPage() {
     e.preventDefault();
     runTests();
     setFormSubmitted(true);
+  };
+
+  const resetForm = () => {
+    setFormData(defaultFormData);
+    setNameIsValid(false);
+    setCardIsValid(false);
+    setMonthIsValid(false);
+    setYearIsValid(false);
+    setCvcIsValid(false);
+    setFormSubmitted(false);
+    setFormIsValid(false);
   };
 
   return (
@@ -131,6 +133,7 @@ function MainPage() {
           onSubmit={onSubmit}
           handleChange={handleChange}
           setFormData={setFormData}
+          resetForm={resetForm}
         />
       </div>
       <Footer />
