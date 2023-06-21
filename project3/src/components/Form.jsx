@@ -21,6 +21,16 @@ const Form = ({
   formIsValid,
   resetForm,
 }) => {
+  const cardDateError = () => {
+    if (!monthIsValid && !yearIsValid && formSubmitted) {
+      return (
+        <p className="text-red text-xs tracking-normal mt-2">Can't be blank</p>
+      );
+    } else {
+      return "";
+    }
+  };
+
   return (
     <div className="text-sm text-darkViolet md:self-center tracking-widest w-11/12 md:w-8/12 justify-self-center">
       <form
@@ -38,18 +48,18 @@ const Form = ({
                 name="cardholderName"
                 type="text"
                 onChange={handleChange}
-                value={formData.cardholderName}
+                value={formData.cardholderName.data}
                 placeholder="e.g. Jane Appleseed"
                 maxLength="24"
                 className={`border ${
-                  !nameIsValid && formSubmitted
+                  !formData.cardholderName.isValid && formSubmitted
                     ? "border-red"
                     : "border-lightGrayViolet"
                 } placeholder:text-lightGrayViolet rounded w-full p-3 mt-1 md:placeholder:text-base`}
               />
-              {!nameIsValid && formSubmitted ? (
+              {formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
-                  Name is required buddy
+                  {formData.cardholderName.errorMessage}
                 </p>
               ) : (
                 ""
@@ -61,11 +71,11 @@ const Form = ({
                 name="cardNumber"
                 type="text"
                 onChange={handleChange}
-                value={formData.cardNumber}
-                maxLength="19"
+                value={formData.cardNumber.data}
+                maxLength="16"
                 placeholder="e.g. 1234 5678 9123 0000"
                 className={`border ${
-                  !cardIsValid && formSubmitted
+                  !formData.cardNumber.isValid && formSubmitted
                     ? "border-red"
                     : "border-lightGrayViolet"
                 }  placeholder:text-lightGrayViolet focus:border-gradient-a rounded w-full shadow-sm p-3 mt-1 md:placeholder:text-base`}
@@ -85,11 +95,11 @@ const Form = ({
                   name="expirationMonth"
                   type="text"
                   onChange={handleChange}
-                  value={formData.expirationMonth}
+                  value={formData.expirationMonth.data}
                   placeholder="MM"
                   maxLength="2"
                   className={`border ${
-                    !monthIsValid && formSubmitted
+                    !formData.expirationMonth.isValid && formSubmitted
                       ? "border-red"
                       : "border-lightGrayViolet"
                   } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2 md:placeholder:text-base`}
@@ -98,23 +108,17 @@ const Form = ({
                   name="expirationYear"
                   type="text"
                   onChange={handleChange}
-                  value={formData.expirationYear}
+                  value={formData.expirationYear.data}
                   placeholder="YY"
                   maxLength="2"
                   className={`border ${
-                    !yearIsValid && formSubmitted
+                    !formData.expirationYear.isValid && formSubmitted
                       ? "border-red"
                       : "border-lightGrayViolet"
                   } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2 ml-2 md:placeholder:text-base`}
                 />
               </div>
-              {!monthIsValid && !yearIsValid && formSubmitted ? (
-                <p className="text-red text-xs tracking-normal mt-2">
-                  Can't be blank
-                </p>
-              ) : (
-                ""
-              )}
+              {cardDateError()}
             </div>
             <div className="col-span-2">
               <h2>CVC</h2>
@@ -122,11 +126,11 @@ const Form = ({
                 name="cvc"
                 type="text"
                 onChange={handleChange}
-                value={formData.cvc}
+                value={formData.cvc.data}
                 placeholder="e.g. 123"
                 maxLength="3"
                 className={`border ${
-                  !cvcIsValid && formSubmitted
+                  !formData.cvc.isValid && formSubmitted
                     ? "border-red"
                     : "border-lightGrayViolet"
                 } placeholder:text-lightGrayViolet rounded w-full shadow-sm p-2 mt-1 md:placeholder:text-base`}
