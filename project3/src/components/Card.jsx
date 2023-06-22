@@ -37,7 +37,7 @@ const Card = () => {
               {displayNumber}
             </div>
             <div className="flex justify-between text-xs md:text-sm tracking-widest md:tracking-[.2em] mt-3 md:mt-6">
-              <div>{displayName}</div>
+              <div>{displayName.toUpperCase()}</div>
               <div>
                 {displayMonth}/{displayYear}
               </div>

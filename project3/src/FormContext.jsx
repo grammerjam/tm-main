@@ -1,4 +1,11 @@
 import formReducer, { initialFormState, ACTIONS } from "./FormReducer";
+import {
+  nameCheck,
+  cardCheck,
+  monthCheck,
+  yearCheck,
+  cvcCheck,
+} from "./utils/validation";
 import { createContext, useReducer, useContext } from "react";
 
 export const FormContext = createContext();
@@ -31,26 +38,32 @@ export const FormContextProvider = ({ children }) => {
 
   const checkName = (name) => {
     console.log("CHECKING NAME: " + name);
+    name = name.trim();
     const checkedName = () => {
-      /* name is empty */
+      /* error if name is empty */
       if (name === "") {
-        dispatch({
-          type: ACTIONS.UPDATE_NAME,
-          payload: {
-            data: name,
-            isValid: false,
-            errorMessage: "Can't be blank",
-          },
-        });
+        // dispatch({
+        //   type: ACTIONS.UPDATE_NAME,
+        //   payload: {
+        //     data: name,
+        //     isValid: false,
+        //     errorMessage: "Can't be blank",
+        //   },
+        return { data: name, isValid: false, errorMessage: "Can't be blank" };
       }
 
       /* name is filled out but doesn't pass all validations */
-      // if (name) {
-      //   return { data: name, isValid: false, errorMessage: "Wrong Format, Must have a space, No numbers, etc." };
-      // }
+      /* We might need multiple checks - for now it's the old one */
+      if (!nameCheck.test(name)) {
+        return {
+          data: name,
+          isValid: false,
+          errorMessage: "Wrong Format - no numbers allowed",
+        };
+      }
 
       /* name passes all validations */
-      if (name) {
+      if (nameCheck.test(name)) {
         return { data: name, isValid: true, errorMessage: "" };
       }
     };

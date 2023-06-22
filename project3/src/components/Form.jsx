@@ -127,7 +127,7 @@ const Form = () => {
               />
               {!cvc.isValid && formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
-                  Can&lsquot be blank
+                  Can't be blank
                 </p>
               ) : (
                 ""
@@ -150,7 +150,7 @@ const Form = () => {
               />
               <h1 className="text-3xl mb-4">THANK YOU!</h1>
               <p className="text-grayText mb-6">
-                We&lsquove added your card details
+                We've added your card details
               </p>
             </div>
             <input
