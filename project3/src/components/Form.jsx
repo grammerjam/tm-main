@@ -1,40 +1,30 @@
-import {
-  nameCheck,
-  cardCheck,
-  monthCheck,
-  yearCheck,
-  cvcCheck,
-} from "../utils/validation";
+import useForm from "../FormContext";
 import completedCheck from "/assets/icon-complete.svg";
 
-const Form = ({
-  formData,
-  onSubmit,
-  handleChange,
-  nameIsValid,
-  cardIsValid,
-  monthIsValid,
-  yearIsValid,
-  cvcIsValid,
-  formSubmitted,
-  setFormSubmitted,
-  formIsValid,
-  resetForm,
-}) => {
-  const cardDateError = () => {
-    if (!monthIsValid && !yearIsValid && formSubmitted) {
-      return (
-        <p className="text-red text-xs tracking-normal mt-2">Can't be blank</p>
-      );
-    } else {
-      return "";
-    }
+const Form = () => {
+  const {
+    cardholderName,
+    cardNumber,
+    expirationMonth,
+    expirationYear,
+    cvc,
+    formSubmitted,
+    formIsValid,
+    updateField,
+    submitForm,
+  } = useForm();
+
+  const handleChange = (e) => {
+    updateField(e);
   };
 
   return (
     <div className="text-sm text-darkViolet md:self-center tracking-widest w-11/12 md:w-8/12 justify-self-center">
       <form
-        onSubmit={onSubmit}
+        onSubmit={(e) => {
+          e.preventDefault();
+          submitForm;
+        }}
         className={
           "grid grid-cols-4 gap-4 md:gap-6" +
           (formSubmitted ? "grid-rows-1" : "grid-rows-4")
@@ -48,18 +38,18 @@ const Form = ({
                 name="cardholderName"
                 type="text"
                 onChange={handleChange}
-                value={formData.cardholderName.data}
+                value={cardholderName.data}
                 placeholder="e.g. Jane Appleseed"
                 maxLength="24"
                 className={`border ${
-                  !formData.cardholderName.isValid && formSubmitted
+                  !cardholderName.isValid && formSubmitted
                     ? "border-red"
                     : "border-lightGrayViolet"
                 } placeholder:text-lightGrayViolet rounded w-full p-3 mt-1 md:placeholder:text-base`}
               />
               {formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
-                  {formData.cardholderName.errorMessage}
+                  {cardholderName.errorMessage}
                 </p>
               ) : (
                 ""
@@ -71,16 +61,16 @@ const Form = ({
                 name="cardNumber"
                 type="text"
                 onChange={handleChange}
-                value={formData.cardNumber.data}
+                value={cardNumber.data}
                 maxLength="16"
                 placeholder="e.g. 1234 5678 9123 0000"
                 className={`border ${
-                  !formData.cardNumber.isValid && formSubmitted
+                  !cardNumber.isValid && formSubmitted
                     ? "border-red"
                     : "border-lightGrayViolet"
                 }  placeholder:text-lightGrayViolet focus:border-gradient-a rounded w-full shadow-sm p-3 mt-1 md:placeholder:text-base`}
               />
-              {!cardIsValid && formSubmitted ? (
+              {!cardNumber.isValid && formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
                   Wrong format, numbers only
                 </p>
@@ -95,11 +85,11 @@ const Form = ({
                   name="expirationMonth"
                   type="text"
                   onChange={handleChange}
-                  value={formData.expirationMonth.data}
+                  value={expirationMonth.data}
                   placeholder="MM"
                   maxLength="2"
                   className={`border ${
-                    !formData.expirationMonth.isValid && formSubmitted
+                    !expirationMonth.isValid && formSubmitted
                       ? "border-red"
                       : "border-lightGrayViolet"
                   } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2 md:placeholder:text-base`}
@@ -108,17 +98,16 @@ const Form = ({
                   name="expirationYear"
                   type="text"
                   onChange={handleChange}
-                  value={formData.expirationYear.data}
+                  value={expirationYear.data}
                   placeholder="YY"
                   maxLength="2"
                   className={`border ${
-                    !formData.expirationYear.isValid && formSubmitted
+                    !expirationYear.isValid && formSubmitted
                       ? "border-red"
                       : "border-lightGrayViolet"
                   } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2 ml-2 md:placeholder:text-base`}
                 />
               </div>
-              {cardDateError()}
             </div>
             <div className="col-span-2">
               <h2>CVC</h2>
@@ -126,18 +115,18 @@ const Form = ({
                 name="cvc"
                 type="text"
                 onChange={handleChange}
-                value={formData.cvc.data}
+                value={cvc.data}
                 placeholder="e.g. 123"
                 maxLength="3"
                 className={`border ${
-                  !formData.cvc.isValid && formSubmitted
+                  !cvc.isValid && formSubmitted
                     ? "border-red"
                     : "border-lightGrayViolet"
                 } placeholder:text-lightGrayViolet rounded w-full shadow-sm p-2 mt-1 md:placeholder:text-base`}
               />
-              {!cvcIsValid && formSubmitted ? (
+              {!cvc.isValid && formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
-                  Can't be blank
+                  Can&lsquot be blank
                 </p>
               ) : (
                 ""
@@ -160,7 +149,7 @@ const Form = ({
               />
               <h1 className="text-3xl mb-4">THANK YOU!</h1>
               <p className="text-grayText mb-6">
-                We've added your card details
+                We&lsquove added your card details
               </p>
             </div>
             <input
