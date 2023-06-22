@@ -6,7 +6,6 @@ import cardLogo from "/assets/card-logo.svg";
 const Card = () => {
   const { cardholderName, cardNumber, expirationMonth, expirationYear, cvc } =
     useForm();
-  // console.log(cardNumber, cardholderName, expirationMonth, expirationYear, cvc);
 
   const cardNumberSpacer = (cardNumber) => {
     const numArray = cardNumber.trim().replaceAll(" ", "").split("");

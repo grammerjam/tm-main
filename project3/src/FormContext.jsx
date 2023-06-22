@@ -18,19 +18,14 @@ export const FormContextProvider = ({ children }) => {
     // run validations on fields as they are being updated
     switch (e.target.name) {
       case "cardholderName":
-        console.log("Choosing " + e.target.name);
         return checkName(e.target.value);
       case "cardNumber":
-        console.log("Choosing " + e.target.name);
         return checkNumber(e.target.value);
       case "expirationMonth":
-        console.log("Choosing " + e.target.name);
         return checkMonth(e.target.value);
       case "expirationYear":
-        console.log("Choosing " + e.target.name);
         return checkYear(e.target.value);
       case "cvc":
-        console.log("Choosing " + e.target.name);
         return checkCVC(e.target.value);
       default:
         return;
@@ -38,7 +33,6 @@ export const FormContextProvider = ({ children }) => {
   };
 
   const checkName = (name) => {
-    console.log("CHECKING NAME: " + name);
     name = name.trimStart();
     const checkedName = () => {
       /* error if name is empty */
@@ -80,9 +74,6 @@ export const FormContextProvider = ({ children }) => {
   };
 
   const checkNumber = (number) => {
-    // trim input and format with spaces
-    console.log("CHECKING NUMBER: " + number);
-
     // strip spaces out of input - easier to enforce 16 digit limit
     number = number.trim();
 
@@ -187,7 +178,6 @@ export const FormContextProvider = ({ children }) => {
       let currentYear = parseInt(
         new Date().getFullYear().toString().substring(2)
       );
-      console.log(currentYear);
 
       if (parseInt(year) < currentYear || parseInt(year) > currentYear + 10) {
         return {
@@ -250,7 +240,6 @@ export const FormContextProvider = ({ children }) => {
       payload: null,
     });
 
-    console.log("Expiration month: " + state.expirationMonth.isValid);
     if (
       state.cardholderName.isValid &&
       state.cardNumber.isValid &&
@@ -258,7 +247,6 @@ export const FormContextProvider = ({ children }) => {
       state.expirationYear.isValid &&
       state.cvc.isValid
     ) {
-      console.log("DISPATCH VALIDATE FORM");
       dispatch({
         type: ACTIONS.VALIDATE_FORM,
         payload: null,
