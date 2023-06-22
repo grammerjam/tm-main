@@ -249,11 +249,21 @@ export const FormContextProvider = ({ children }) => {
       type: ACTIONS.SUBMIT_FORM,
       payload: null,
     });
-    // if(all fields are valid) {
-    //   dispatch({
-    //     type: ACTIONS.VALIDATE_FORM
-    //   })
-    // }
+
+    console.log("Expiration month: " + state.expirationMonth.isValid);
+    if (
+      state.cardholderName.isValid &&
+      state.cardNumber.isValid &&
+      state.expirationMonth.isValid &&
+      state.expirationYear.isValid &&
+      state.cvc.isValid
+    ) {
+      console.log("DISPATCH VALIDATE FORM");
+      dispatch({
+        type: ACTIONS.VALIDATE_FORM,
+        payload: null,
+      });
+    }
   };
 
   const resetForm = () => {

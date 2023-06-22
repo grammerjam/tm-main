@@ -7,8 +7,21 @@ const Card = () => {
   const { cardholderName, cardNumber, expirationMonth, expirationYear, cvc } =
     useForm();
   // console.log(cardNumber, cardholderName, expirationMonth, expirationYear, cvc);
+
+  const cardNumberSpacer = (cardNumber) => {
+    const numArray = cardNumber.trim().replaceAll(" ", "").split("");
+    let spacedCardNumber = [];
+    for (let i = 0; i < numArray.length; i++) {
+      if (i > 0 && i % 4 === 0) spacedCardNumber.push(" ");
+      spacedCardNumber.push(numArray[i]);
+    }
+    return spacedCardNumber.join("").trim();
+  };
+
   const displayNumber =
-    cardNumber.data === "" ? "0000 0000 0000 0000" : cardNumber.data;
+    cardNumber.data === ""
+      ? "0000 0000 0000 0000"
+      : cardNumberSpacer(cardNumber.data);
   const displayName =
     cardholderName.data === "" ? "Jane Appleseed" : cardholderName.data;
   const displayMonth =
