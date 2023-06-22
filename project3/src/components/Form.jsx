@@ -20,14 +20,14 @@ const Form = () => {
   };
 
   return (
-    <div className="text-sm text-darkViolet md:self-center tracking-widest w-11/12 md:w-8/12 justify-self-center">
+    <div className="text-sm text-darkViolet lg:self-center tracking-widest w-11/12 lg:w-8/12 justify-self-center">
       <form
         onSubmit={(e) => {
           e.preventDefault();
           submitForm();
         }}
         className={
-          "grid grid-cols-4 gap-4 md:gap-6" +
+          "grid grid-cols-4 gap-4 lg:gap-6" +
           (formSubmitted ? "grid-rows-1" : "grid-rows-4")
         }
       >
@@ -46,7 +46,7 @@ const Form = () => {
                   !cardholderName.isValid && formSubmitted
                     ? "border-red"
                     : "border-lightGrayViolet"
-                } placeholder:text-lightGrayViolet rounded w-full p-3 mt-1 md:placeholder:text-base`}
+                } placeholder:text-lightGrayViolet rounded w-full p-3 mt-1 lg:placeholder:text-base`}
               />
               {formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
@@ -69,7 +69,7 @@ const Form = () => {
                   !cardNumber.isValid && formSubmitted
                     ? "border-red"
                     : "border-lightGrayViolet"
-                }  placeholder:text-lightGrayViolet focus:border-gradient-a rounded w-full shadow-sm p-3 mt-1 md:placeholder:text-base`}
+                }  placeholder:text-lightGrayViolet focus:border-gradient-a rounded w-full shadow-sm p-3 mt-1 lg:placeholder:text-base`}
               />
               {!cardNumber.isValid && formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
@@ -93,7 +93,7 @@ const Form = () => {
                     !expirationMonth.isValid && formSubmitted
                       ? "border-red"
                       : "border-lightGrayViolet"
-                  } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2 md:placeholder:text-base`}
+                  } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2 lg:placeholder:text-base`}
                 />
                 <input
                   name="expirationYear"
@@ -106,7 +106,7 @@ const Form = () => {
                     !expirationYear.isValid && formSubmitted
                       ? "border-red"
                       : "border-lightGrayViolet"
-                  } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2 ml-2 md:placeholder:text-base`}
+                  } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2 ml-2 lg:placeholder:text-base`}
                 />
               </div>
             </div>
@@ -123,7 +123,7 @@ const Form = () => {
                   !cvc.isValid && formSubmitted
                     ? "border-red"
                     : "border-lightGrayViolet"
-                } placeholder:text-lightGrayViolet rounded w-full shadow-sm p-2 mt-1 md:placeholder:text-base`}
+                } placeholder:text-lightGrayViolet rounded w-full shadow-sm p-2 mt-1 lg:placeholder:text-base`}
               />
               {!cvc.isValid && formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
@@ -137,7 +137,7 @@ const Form = () => {
             <input
               type="submit"
               value="Confirm"
-              className="border rounded-md h-14 bg-darkViolet text-white text-lg w-full col-span-4"
+              className="border rounded-lg h-14 bg-darkViolet text-white text-lg w-full col-span-4"
             />
           </>
         ) : (
@@ -157,7 +157,7 @@ const Form = () => {
               onClick={resetForm}
               type="submit"
               value="Continue"
-              className="border rounded-md h-14 bg-darkViolet text-white text-lg w-full col-span-4"
+              className="border rounded-lg h-14 bg-darkViolet text-white text-lg w-full col-span-4"
             />
           </>
         )}
