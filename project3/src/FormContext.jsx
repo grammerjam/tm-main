@@ -38,7 +38,7 @@ export const FormContextProvider = ({ children }) => {
 
   const checkName = (name) => {
     console.log("CHECKING NAME: " + name);
-    name = name.trim();
+    name = name.trimStart();
     const checkedName = () => {
       /* error if name is empty */
       if (name === "") {
@@ -123,7 +123,7 @@ export const FormContextProvider = ({ children }) => {
       }
 
       // month is not empty but doesn't pass tests
-      if (!checkMonth.test(month)) {
+      if (!monthCheck.test(month)) {
         return {
           data: month,
           isValid: false,
@@ -132,7 +132,7 @@ export const FormContextProvider = ({ children }) => {
       }
 
       // month passes all validations
-      if (checkMonth.test(month)) {
+      if (monthCheck.test(month)) {
         return { data: month, isValid: true, errorMessage: "" };
       }
     };
