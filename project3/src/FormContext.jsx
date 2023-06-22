@@ -1,6 +1,7 @@
 import formReducer, { initialFormState, ACTIONS } from "./FormReducer";
 import {
   nameCheck,
+  twoNameCheck,
   cardCheck,
   monthCheck,
   yearCheck,
@@ -56,6 +57,13 @@ export const FormContextProvider = ({ children }) => {
           data: name,
           isValid: false,
           errorMessage: "Wrong Format - no numbers allowed",
+        };
+      }
+      if (!twoNameCheck.test(name)) {
+        return {
+          data: name,
+          isValid: false,
+          errorMessage: "Wrong Format - must be first and last names.",
         };
       }
 
