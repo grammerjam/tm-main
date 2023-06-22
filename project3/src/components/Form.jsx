@@ -12,6 +12,7 @@ const Form = () => {
     formIsValid,
     updateField,
     submitForm,
+    resetForm,
   } = useForm();
 
   const handleChange = (e) => {
@@ -23,7 +24,7 @@ const Form = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          submitForm;
+          submitForm();
         }}
         className={
           "grid grid-cols-4 gap-4 md:gap-6" +

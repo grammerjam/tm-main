@@ -32,9 +32,9 @@ export const ACTIONS = {
   // UPDATE_FIELD: "update-field",
   UPDATE_NAME: "update-name",
   UPDATE_CARD_NUMBER: "update-card-number",
-  UPDATE_MONTH: "update-card-number",
-  UPDATE_YEAR: "update-card-number",
-  UPDATE_CVC: "update-card-number",
+  UPDATE_MONTH: "update-month",
+  UPDATE_YEAR: "update-year",
+  UPDATE_CVC: "update-cvc",
   SUBMIT_FORM: "submit-form",
   VALIDATE_FORM: "validate-form",
   RESET_FORM: "reset-form",
@@ -42,33 +42,29 @@ export const ACTIONS = {
 
 const formReducer = (state, action) => {
   const { type, payload } = action;
+  console.log("Action Type: " + type);
   switch (type) {
     case ACTIONS.UPDATE_NAME:
-      console.log("Update Name: " + payload);
       return {
         ...state,
         cardholderName: { ...payload },
       };
     case ACTIONS.UPDATE_CARD_NUMBER:
-      console.log("Update Card Number: " + payload);
       return {
         ...state,
         cardNumber: { ...payload },
       };
     case ACTIONS.UPDATE_MONTH:
-      console.log("Update Month: " + payload);
       return {
         ...state,
         expirationMonth: { ...payload },
       };
     case ACTIONS.UPDATE_YEAR:
-      console.log("Update Year: " + payload);
       return {
         ...state,
         expirationYear: { ...payload },
       };
     case ACTIONS.UPDATE_CVC:
-      console.log("Update CVC: " + payload);
       return {
         ...state,
         cvc: { ...payload },

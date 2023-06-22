@@ -10,14 +10,19 @@ export const FormContextProvider = ({ children }) => {
     // run validations on fields as they are being updated
     switch (e.target.name) {
       case "cardholderName":
+        console.log("Choosing " + e.target.name);
         return checkName(e.target.value);
       case "cardNumber":
+        console.log("Choosing " + e.target.name);
         return checkNumber(e.target.value);
       case "expirationMonth":
+        console.log("Choosing " + e.target.name);
         return checkMonth(e.target.value);
       case "expirationYear":
+        console.log("Choosing " + e.target.name);
         return checkYear(e.target.value);
       case "cvc":
+        console.log("Choosing " + e.target.name);
         return checkCVC(e.target.value);
       default:
         return;
@@ -143,12 +148,20 @@ export const FormContextProvider = ({ children }) => {
   const submitForm = () => {
     dispatch({
       type: ACTIONS.SUBMIT_FORM,
+      payload: null,
     });
     // if(all fields are valid) {
     //   dispatch({
     //     type: ACTIONS.VALIDATE_FORM
     //   })
     // }
+  };
+
+  const resetForm = () => {
+    dispatch({
+      type: ACTIONS.RESET_FORM,
+      payload: null,
+    });
   };
 
   const value = {
@@ -160,8 +173,8 @@ export const FormContextProvider = ({ children }) => {
     formIsValid: state.formIsValid,
     formSubmitted: state.formSubmitted,
     updateField,
-    checkName,
     submitForm,
+    resetForm,
   };
 
   return <FormContext.Provider value={value}>{children}</FormContext.Provider>;
