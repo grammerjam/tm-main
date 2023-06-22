@@ -42,14 +42,11 @@ export const FormContextProvider = ({ children }) => {
     const checkedName = () => {
       /* error if name is empty */
       if (name === "") {
-        // dispatch({
-        //   type: ACTIONS.UPDATE_NAME,
-        //   payload: {
-        //     data: name,
-        //     isValid: false,
-        //     errorMessage: "Can't be blank",
-        //   },
-        return { data: name, isValid: false, errorMessage: "Can't be blank" };
+        return {
+          data: name,
+          isValid: false,
+          errorMessage: "Name is required buddy",
+        };
       }
 
       /* name is filled out but doesn't pass all validations */
@@ -76,15 +73,31 @@ export const FormContextProvider = ({ children }) => {
 
   const checkNumber = (number) => {
     // trim input and format with spaces
-    //
+    console.log("CHECKING NUMBER: " + number);
+
+    // strip spaces out of input - easier to enforce 16 digit limit
+    number = number.trim();
+
     // run validations
     const checkedNumber = (number) => {
       // number is empty
+      if (number === "") {
+        return { data: number, isValid: false, errorMessage: "Can't be blank" };
+      }
 
       // number is not empty but doesn't pass tests
 
+      // we need separate tests for only numbers, length, and valid prefix
+      if (!cardCheck.test(number)) {
+        return {
+          data: number,
+          isValid: false,
+          errorMessage: "Credit card numbers only",
+        };
+      }
+
       // number passes all validations
-      if (number) {
+      if (cardCheck.test(number)) {
         return { data: number, isValid: true, errorMessage: "" };
       }
     };
@@ -101,11 +114,25 @@ export const FormContextProvider = ({ children }) => {
     // run validations
     const checkedMonth = (month) => {
       // month is empty
+      if (month === "") {
+        return {
+          data: month,
+          isValid: false,
+          errorMessage: "Month can't be blank.",
+        };
+      }
 
       // month is not empty but doesn't pass tests
+      if (!checkMonth.test(month)) {
+        return {
+          data: month,
+          isValid: false,
+          errorMessage: "Month must be two digits between 01 to 12.",
+        };
+      }
 
       // month passes all validations
-      if (month) {
+      if (checkMonth.test(month)) {
         return { data: month, isValid: true, errorMessage: "" };
       }
     };
