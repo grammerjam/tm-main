@@ -203,6 +203,7 @@ export const FormContextProvider = ({ children }) => {
 
   const checkCVC = (cvc) => {
     // trim input and format with spaces
+    cvc = cvc.trim();
     //
     // run validations
     const checkedCVC = (cvc) => {
