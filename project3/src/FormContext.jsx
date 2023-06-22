@@ -216,7 +216,7 @@ export const FormContextProvider = ({ children }) => {
       }
 
       // cvc is not empty but doesn't pass tests
-      if (!checkCVC.test(cvc)) {
+      if (!cvcCheck.test(cvc)) {
         return {
           data: cvc,
           isValid: false,
@@ -224,7 +224,7 @@ export const FormContextProvider = ({ children }) => {
         };
       }
       // cvc passes all validations
-      if (checkCVC.test(cvc)) {
+      if (cvcCheck.test(cvc)) {
         return { data: cvc, isValid: true, errorMessage: "" };
       }
     };
