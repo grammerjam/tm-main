@@ -48,7 +48,7 @@ const Form = () => {
                     : "border-lightGrayViolet"
                 } placeholder:text-lightGrayViolet rounded w-full p-3 mt-1 lg:placeholder:text-base`}
               />
-              {formSubmitted ? (
+              {!cardholderName.isValid && formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
                   {cardholderName.errorMessage}
                 </p>
@@ -71,9 +71,9 @@ const Form = () => {
                     : "border-lightGrayViolet"
                 }  placeholder:text-lightGrayViolet focus:border-gradient-a rounded w-full shadow-sm p-3 mt-1 lg:placeholder:text-base`}
               />
-              {!cardNumber.isValid && formSubmitted ? (
+              {formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
-                  Wrong format, numbers only
+                  {cardNumber.errorMessage}
                 </p>
               ) : (
                 ""
@@ -108,6 +108,22 @@ const Form = () => {
                       : "border-lightGrayViolet"
                   } placeholder:text-lightGrayViolet rounded w-20 shadow-sm p-2 ml-2 lg:placeholder:text-base`}
                 />
+              </div>
+              <div className="mt-2">
+                {!expirationMonth.isValid && formSubmitted ? (
+                  <p className="text-red text-xs tracking-normal">
+                    {expirationMonth.errorMessage}
+                  </p>
+                ) : (
+                  ""
+                )}
+                {!expirationYear.isValid && formSubmitted ? (
+                  <p className="text-red text-xs tracking-normal">
+                    {expirationYear.errorMessage}
+                  </p>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
             <div className="col-span-2">

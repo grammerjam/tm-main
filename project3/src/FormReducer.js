@@ -1,27 +1,27 @@
 export const initialFormState = {
   cardholderName: {
     isValid: false,
-    errorMessage: "",
+    errorMessage: "Name is required buddy!",
     data: "",
   },
   cardNumber: {
     isValid: false,
-    errorMessage: "",
+    errorMessage: "What's your credit card number?",
     data: "",
   },
   expirationMonth: {
     isValid: false,
-    errorMessage: "",
+    errorMessage: "Enter two digit month.",
     data: "",
   },
   expirationYear: {
     isValid: false,
-    errorMessage: "",
+    errorMessage: "Enter two digit year.",
     data: "",
   },
   cvc: {
     isValid: false,
-    errorMessage: "",
+    errorMessage: "Enter your cvc code.",
     data: "",
   },
   formSubmitted: false,

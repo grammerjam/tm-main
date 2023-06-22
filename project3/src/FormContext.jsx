@@ -110,7 +110,8 @@ export const FormContextProvider = ({ children }) => {
 
   const checkMonth = (month) => {
     // clean input
-    //
+    month = month.trim();
+
     // run validations
     const checkedMonth = (month) => {
       // month is empty
@@ -123,11 +124,19 @@ export const FormContextProvider = ({ children }) => {
       }
 
       // month is not empty but doesn't pass tests
+      if (month.length !== 2) {
+        return {
+          data: month,
+          isValid: false,
+          errorMessage: "Month must be two digits.",
+        };
+      }
+
       if (!monthCheck.test(month)) {
         return {
           data: month,
           isValid: false,
-          errorMessage: "Month must be two digits between 01 to 12.",
+          errorMessage: "Invalid month.",
         };
       }
 
@@ -145,12 +154,40 @@ export const FormContextProvider = ({ children }) => {
 
   const checkYear = (year) => {
     // trim input and format with spaces
-    //
+    year = year.trim();
+
     // run validations
     const checkedYear = (year) => {
       // year is empty
+      if (year === "") {
+        return {
+          data: year,
+          isValid: false,
+          errorMessage: "Year can't be blank.",
+        };
+      }
 
       // year is not empty but doesn't pass tests
+      if (!yearCheck.test(year)) {
+        return {
+          data: year,
+          isValid: false,
+          errorMessage: "Year must be two digits.",
+        };
+      }
+
+      let currentYear = parseInt(
+        new Date().getFullYear().toString().substring(2)
+      );
+      console.log(currentYear);
+
+      if (parseInt(year) < currentYear || parseInt(year) > currentYear + 10) {
+        return {
+          data: year,
+          isValid: false,
+          errorMessage: "Invalid year.",
+        };
+      }
 
       // year passes all validations
       if (year) {
@@ -170,11 +207,24 @@ export const FormContextProvider = ({ children }) => {
     // run validations
     const checkedCVC = (cvc) => {
       // cvc is empty
+      if (cvc === "") {
+        return {
+          data: cvc,
+          isValid: false,
+          errorMessage: "CVC can't be blank.",
+        };
+      }
 
       // cvc is not empty but doesn't pass tests
-
+      if (!checkCVC.test(cvc)) {
+        return {
+          data: cvc,
+          isValid: false,
+          errorMessage: "Invalid CVC.",
+        };
+      }
       // cvc passes all validations
-      if (cvc) {
+      if (checkCVC.test(cvc)) {
         return { data: cvc, isValid: true, errorMessage: "" };
       }
     };
