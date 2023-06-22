@@ -42,7 +42,6 @@ export const ACTIONS = {
 
 const formReducer = (state, action) => {
   const { type, payload } = action;
-  console.log("Action Type: " + type);
   switch (type) {
     case ACTIONS.UPDATE_NAME:
       return {
