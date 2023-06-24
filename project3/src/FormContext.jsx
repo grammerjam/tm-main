@@ -5,7 +5,10 @@ import {
   cardCheck,
   monthCheck,
   yearCheck,
-  cvcCheck,
+  amexCardCheck,
+  visaCardCheck,
+  mainCvcCheck,
+  amexCvcCheck,
 } from "./utils/validation";
 import { createContext, useReducer, useContext } from "react";
 
@@ -32,47 +35,6 @@ export const FormContextProvider = ({ children }) => {
     }
   };
 
-  const checkName = (name) => {
-    name = name.trimStart();
-    const checkedName = () => {
-      /* error if name is empty */
-      if (name === "") {
-        return {
-          data: name,
-          isValid: false,
-          errorMessage: "Name is required buddy",
-        };
-      }
-
-      /* name is filled out but doesn't pass all validations */
-      /* We might need multiple checks - for now it's the old one */
-      if (!nameCheck.test(name)) {
-        return {
-          data: name,
-          isValid: false,
-          errorMessage: "Wrong Format - no numbers allowed",
-        };
-      }
-      if (!twoNameCheck.test(name)) {
-        return {
-          data: name,
-          isValid: false,
-          errorMessage: "Wrong Format - must be first and last names.",
-        };
-      }
-
-      /* name passes all validations */
-      if (nameCheck.test(name)) {
-        return { data: name, isValid: true, errorMessage: "" };
-      }
-    };
-
-    dispatch({
-      type: ACTIONS.UPDATE_NAME,
-      payload: checkedName(name),
-    });
-  };
-
   const checkNumber = (number) => {
     // strip spaces out of input - easier to enforce 16 digit limit
     number = number.trim();
@@ -81,23 +43,69 @@ export const FormContextProvider = ({ children }) => {
     const checkedNumber = (number) => {
       // number is empty
       if (number === "") {
-        return { data: number, isValid: false, errorMessage: "Can't be blank" };
+        return {
+          ...state,
+          cardNumber: {
+            data: number,
+            isValid: false,
+            errorMessage: "Can't be blank",
+            cardType: "invalid",
+          },
+        };
       }
 
       // number is not empty but doesn't pass tests
 
       // we need separate tests for only numbers, length, and valid prefix
-      if (!cardCheck.test(number)) {
+      if (
+        !visaCardCheck.test(number) &&
+        !amexCardCheck.test(number) &&
+        !cardCheck.test(number)
+      ) {
         return {
-          data: number,
-          isValid: false,
-          errorMessage: "Credit card numbers only",
+          ...state,
+          cardNumber: {
+            data: number,
+            isValid: false,
+            errorMessage: "Credit card numbers only",
+          },
+          cardType: "invalid",
         };
       }
 
       // number passes all validations
+      if (visaCardCheck.test(number)) {
+        return {
+          ...state,
+          cardNumber: {
+            data: number,
+            isValid: true,
+            errorMessage: "",
+          },
+          cardType: "visa",
+        };
+      }
+      if (amexCardCheck.test(number)) {
+        return {
+          ...state,
+          cardNumber: {
+            data: number,
+            isValid: true,
+            errorMessage: "",
+          },
+          cardType: "amex",
+        };
+      }
       if (cardCheck.test(number)) {
-        return { data: number, isValid: true, errorMessage: "" };
+        return {
+          ...state,
+          cardNumber: {
+            data: number,
+            isValid: true,
+            errorMessage: "",
+          },
+          cardType: "other",
+        };
       }
     };
 
@@ -116,32 +124,44 @@ export const FormContextProvider = ({ children }) => {
       // month is empty
       if (month === "") {
         return {
-          data: month,
-          isValid: false,
-          errorMessage: "Month can't be blank.",
+          ...state,
+          expirationMonth: {
+            data: month,
+            isValid: false,
+            errorMessage: "Month can't be blank.",
+          },
         };
       }
 
       // month is not empty but doesn't pass tests
       if (month.length !== 2) {
         return {
-          data: month,
-          isValid: false,
-          errorMessage: "Month must be two digits.",
+          ...state,
+          expirationMonth: {
+            data: month,
+            isValid: false,
+            errorMessage: "Month must be two digits.",
+          },
         };
       }
 
       if (!monthCheck.test(month)) {
         return {
-          data: month,
-          isValid: false,
-          errorMessage: "Invalid month.",
+          ...state,
+          expirationMonth: {
+            data: month,
+            isValid: false,
+            errorMessage: "Invalid month.",
+          },
         };
       }
 
       // month passes all validations
       if (monthCheck.test(month)) {
-        return { data: month, isValid: true, errorMessage: "" };
+        return {
+          ...state,
+          expirationMonth: { data: month, isValid: true, errorMessage: "" },
+        };
       }
     };
 
@@ -160,18 +180,24 @@ export const FormContextProvider = ({ children }) => {
       // year is empty
       if (year === "") {
         return {
-          data: year,
-          isValid: false,
-          errorMessage: "Year can't be blank.",
+          ...state,
+          expirationYear: {
+            data: year,
+            isValid: false,
+            errorMessage: "Year can't be blank.",
+          },
         };
       }
 
       // year is not empty but doesn't pass tests
       if (!yearCheck.test(year)) {
         return {
-          data: year,
-          isValid: false,
-          errorMessage: "Year must be two digits.",
+          ...state,
+          expirationYear: {
+            data: year,
+            isValid: false,
+            errorMessage: "Year must be two digits.",
+          },
         };
       }
 
@@ -181,15 +207,21 @@ export const FormContextProvider = ({ children }) => {
 
       if (parseInt(year) < currentYear || parseInt(year) > currentYear + 10) {
         return {
-          data: year,
-          isValid: false,
-          errorMessage: "Invalid year.",
+          ...state,
+          expirationYear: {
+            data: year,
+            isValid: false,
+            errorMessage: "Invalid year.",
+          },
         };
       }
 
       // year passes all validations
       if (year) {
-        return { data: year, isValid: true, errorMessage: "" };
+        return {
+          ...state,
+          expirationYear: { data: year, isValid: true, errorMessage: "" },
+        };
       }
     };
 
@@ -204,33 +236,127 @@ export const FormContextProvider = ({ children }) => {
     cvc = cvc.trim();
     //
     // run validations
+    // console.log("main cvc check: " + mainCvcCheck.test(cvc));
+    // console.log("amex cvc check: " + amexCvcCheck.test(cvc));
     const checkedCVC = (cvc) => {
       // cvc is empty
       if (cvc === "") {
+        console.log("BLANK CVC");
         return {
-          data: cvc,
-          isValid: false,
-          errorMessage: "CVC can't be blank.",
+          ...state,
+          cvc: {
+            data: cvc,
+            isValid: false,
+            errorMessage: "CVC can't be blank.",
+          },
         };
       }
 
       // cvc is not empty but doesn't pass tests
-      if (!cvcCheck.test(cvc)) {
+      if (!mainCvcCheck.test(cvc) && !amexCvcCheck.test(cvc)) {
+        console.log("CVC not blank but not passing either test");
         return {
-          data: cvc,
-          isValid: false,
-          errorMessage: "Invalid CVC.",
+          ...state,
+          cvc: {
+            data: cvc,
+            isValid: false,
+            errorMessage: "Invalid CVC.",
+          },
         };
       }
+
       // cvc passes all validations
-      if (cvcCheck.test(cvc)) {
-        return { data: cvc, isValid: true, errorMessage: "" };
+      if (state.cardType === "invalid") {
+        console.log("Invalid cardtype");
+        return {
+          ...state,
+          cvc: { data: cvc, isValid: false, errorMessage: "Invalid Card" },
+        };
       }
+      if (state.cardType === "amex" && amexCvcCheck.test(cvc)) {
+        console.log("Cardtype amex and CVC passing amex test");
+        return {
+          ...state,
+          cvc: { data: cvc, isValid: true, errorMessage: "" },
+        };
+      }
+      if (state.cardType === "visa" && mainCvcCheck.test(cvc)) {
+        console.log("Cardtype visa and CVC passing main test");
+        return {
+          ...state,
+          cvc: { data: cvc, isValid: true, errorMessage: "" },
+        };
+      }
+      if (state.cardType === "other" && mainCvcCheck.test(cvc)) {
+        console.log("Cardtype other and CVC passing main test");
+        return {
+          ...state,
+          cvc: { data: cvc, isValid: true, errorMessage: "" },
+        };
+      }
+
+      return {
+        ...state,
+        cvc: { data: cvc, isValid: false, errorMessage: "Invalid input" },
+      };
     };
 
     dispatch({
       type: ACTIONS.UPDATE_CVC,
       payload: checkedCVC(cvc),
+    });
+  };
+
+  const checkName = (name) => {
+    name = name.trimStart();
+    const checkedName = () => {
+      /* error if name is empty */
+      if (name === "") {
+        return {
+          ...state,
+          cardholderName: {
+            data: name,
+            isValid: false,
+            errorMessage: "Name is required buddy",
+          },
+        };
+      }
+
+      /* name is filled out but doesn't pass all validations */
+      /* We might need multiple checks - for now it's the old one */
+      if (!nameCheck.test(name)) {
+        return {
+          ...state,
+          cardholderName: {
+            data: name,
+            isValid: false,
+            errorMessage: "Wrong Format - no numbers allowed",
+          },
+        };
+      }
+      if (!twoNameCheck.test(name)) {
+        return {
+          ...state,
+          cardholderName: {
+            data: name,
+            isValid: false,
+            errorMessage: "Wrong Format - must be first and last names.",
+          },
+        };
+      }
+
+      /* name passes all validations */
+      if (nameCheck.test(name)) {
+        return {
+          ...state,
+          cardholderName: { data: name, isValid: true, errorMessage: "" },
+        };
+      }
+    };
+
+    dispatch({
+      type: ACTIONS.UPDATE_NAME,
+      payload: checkedName(name),
     });
   };
 
@@ -267,6 +393,7 @@ export const FormContextProvider = ({ children }) => {
     expirationMonth: state.expirationMonth,
     expirationYear: state.expirationYear,
     cvc: state.cvc,
+    cardType: state.cardType,
     formIsValid: state.formIsValid,
     formSubmitted: state.formSubmitted,
     updateField,

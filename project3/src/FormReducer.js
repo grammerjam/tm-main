@@ -26,6 +26,7 @@ export const initialFormState = {
   },
   formSubmitted: false,
   formIsValid: false,
+  cardType: "invalid",
 };
 
 export const ACTIONS = {
@@ -35,6 +36,7 @@ export const ACTIONS = {
   UPDATE_MONTH: "update-month",
   UPDATE_YEAR: "update-year",
   UPDATE_CVC: "update-cvc",
+  UPDATE_CARD_TYPE: "update-card-type",
   SUBMIT_FORM: "submit-form",
   VALIDATE_FORM: "validate-form",
   RESET_FORM: "reset-form",
@@ -44,30 +46,17 @@ const formReducer = (state, action) => {
   const { type, payload } = action;
   switch (type) {
     case ACTIONS.UPDATE_NAME:
-      return {
-        ...state,
-        cardholderName: { ...payload },
-      };
+      return payload;
     case ACTIONS.UPDATE_CARD_NUMBER:
-      return {
-        ...state,
-        cardNumber: { ...payload },
-      };
+      return payload;
     case ACTIONS.UPDATE_MONTH:
-      return {
-        ...state,
-        expirationMonth: { ...payload },
-      };
+      return payload;
     case ACTIONS.UPDATE_YEAR:
-      return {
-        ...state,
-        expirationYear: { ...payload },
-      };
+      return payload;
     case ACTIONS.UPDATE_CVC:
-      return {
-        ...state,
-        cvc: { ...payload },
-      };
+      return payload;
+    case ACTIONS.UPDATE_CARD_TYPE:
+      return payload;
     case ACTIONS.SUBMIT_FORM:
       return {
         ...state,
