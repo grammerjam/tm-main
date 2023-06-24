@@ -134,7 +134,7 @@ const Form = () => {
                 onChange={handleChange}
                 value={cvc.data}
                 placeholder="e.g. 123"
-                maxLength="3"
+                maxLength="4"
                 className={`border ${
                   !cvc.isValid && formSubmitted
                     ? "border-red"
@@ -143,7 +143,7 @@ const Form = () => {
               />
               {!cvc.isValid && formSubmitted ? (
                 <p className="text-red text-xs tracking-normal mt-2">
-                  Can't be blank
+                  {cvc.errorMessage}
                 </p>
               ) : (
                 ""

@@ -5,7 +5,10 @@ import {
   cardCheck,
   monthCheck,
   yearCheck,
-  cvcCheck,
+  amexCardCheck,
+  visaCardCheck,
+  mainCvcCheck,
+  amexCvcCheck,
 } from "./utils/validation";
 import { createContext, useReducer, useContext } from "react";
 
@@ -81,23 +84,69 @@ export const FormContextProvider = ({ children }) => {
     const checkedNumber = (number) => {
       // number is empty
       if (number === "") {
-        return { data: number, isValid: false, errorMessage: "Can't be blank" };
+        return {
+          ...state,
+          cardNumber: {
+            data: number,
+            isValid: false,
+            errorMessage: "Can't be blank",
+            cardType: "invalid",
+          },
+        };
       }
 
       // number is not empty but doesn't pass tests
 
       // we need separate tests for only numbers, length, and valid prefix
-      if (!cardCheck.test(number)) {
+      if (
+        !visaCardCheck.test(number) &&
+        !amexCardCheck.test(number) &&
+        !cardCheck.test(number)
+      ) {
         return {
-          data: number,
-          isValid: false,
-          errorMessage: "Credit card numbers only",
+          ...state,
+          cardNumber: {
+            data: number,
+            isValid: false,
+            errorMessage: "Credit card numbers only",
+          },
+          cardType: "invalid",
         };
       }
 
       // number passes all validations
+      if (visaCardCheck.test(number)) {
+        return {
+          ...state,
+          cardNumber: {
+            data: number,
+            isValid: true,
+            errorMessage: "",
+          },
+          cardType: "visa",
+        };
+      }
+      if (amexCardCheck.test(number)) {
+        return {
+          ...state,
+          cardNumber: {
+            data: number,
+            isValid: true,
+            errorMessage: "",
+          },
+          cardType: "amex",
+        };
+      }
       if (cardCheck.test(number)) {
-        return { data: number, isValid: true, errorMessage: "" };
+        return {
+          ...state,
+          cardNumber: {
+            data: number,
+            isValid: true,
+            errorMessage: "",
+          },
+          cardType: "other",
+        };
       }
     };
 
@@ -204,6 +253,8 @@ export const FormContextProvider = ({ children }) => {
     cvc = cvc.trim();
     //
     // run validations
+    // console.log("main cvc check: " + mainCvcCheck.test(cvc));
+    // console.log("amex cvc check: " + amexCvcCheck.test(cvc));
     const checkedCVC = (cvc) => {
       // cvc is empty
       if (cvc === "") {
@@ -215,7 +266,7 @@ export const FormContextProvider = ({ children }) => {
       }
 
       // cvc is not empty but doesn't pass tests
-      if (!cvcCheck.test(cvc)) {
+      if (!mainCvcCheck.test(cvc) && !amexCvcCheck.test(cvc)) {
         return {
           data: cvc,
           isValid: false,
@@ -223,7 +274,15 @@ export const FormContextProvider = ({ children }) => {
         };
       }
       // cvc passes all validations
-      if (cvcCheck.test(cvc)) {
+      if (
+        state.cardNumber.cardType === ("other" || "visa") &&
+        mainCvcCheck.test(cvc)
+      ) {
+        console.log("VALID VISA or something");
+        return { data: cvc, isValid: true, errorMessage: "" };
+      }
+      if (state.cardNumber.cardType === "amex" && amexCvcCheck.test(cvc)) {
+        console.log("VALID AMEX");
         return { data: cvc, isValid: true, errorMessage: "" };
       }
     };
