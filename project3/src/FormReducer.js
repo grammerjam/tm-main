@@ -2,27 +2,27 @@ export const initialFormState = {
   cardholderName: {
     isValid: false,
     errorMessage: "Name is required buddy!",
-    data: "Billy Bob",
+    data: "",
   },
   cardNumber: {
     isValid: false,
     errorMessage: "What's your credit card number?",
-    data: "34567890123443",
+    data: "",
   },
   expirationMonth: {
     isValid: false,
     errorMessage: "Enter two digit month.",
-    data: "11",
+    data: "",
   },
   expirationYear: {
     isValid: false,
     errorMessage: "Enter two digit year.",
-    data: "25",
+    data: "",
   },
   cvc: {
     isValid: false,
     errorMessage: "Enter your cvc code.",
-    data: "123",
+    data: "",
   },
   formSubmitted: false,
   formIsValid: false,
@@ -46,32 +46,17 @@ const formReducer = (state, action) => {
   const { type, payload } = action;
   switch (type) {
     case ACTIONS.UPDATE_NAME:
-      return {
-        ...state,
-        cardholderName: { ...payload },
-      };
+      return payload;
     case ACTIONS.UPDATE_CARD_NUMBER:
       return payload;
     case ACTIONS.UPDATE_MONTH:
-      return {
-        ...state,
-        expirationMonth: { ...payload },
-      };
+      return payload;
     case ACTIONS.UPDATE_YEAR:
-      return {
-        ...state,
-        expirationYear: { ...payload },
-      };
+      return payload;
     case ACTIONS.UPDATE_CVC:
-      return {
-        ...state,
-        cvc: { ...payload },
-      };
+      return payload;
     case ACTIONS.UPDATE_CARD_TYPE:
-      return {
-        ...state,
-        cardType: payload,
-      };
+      return payload;
     case ACTIONS.SUBMIT_FORM:
       return {
         ...state,
