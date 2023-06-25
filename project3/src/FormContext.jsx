@@ -297,7 +297,7 @@ export const FormContextProvider = ({ children }) => {
 
       return {
         ...state,
-        cvc: { data: cvc, isValid: false, errorMessage: "Invalid input" },
+        cvc: { data: cvc, isValid: false, errorMessage: "Invalid CVC." },
       };
     };
 
