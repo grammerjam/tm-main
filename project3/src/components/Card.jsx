@@ -2,10 +2,18 @@ import useForm from "../FormContext";
 import cardBack from "/assets/bg-card-back.png";
 import cardFront from "/assets/bg-card-front.png";
 import cardLogo from "/assets/card-logo.svg";
+import visaLogo from "/assets/Visa_logo.svg";
+import amexLogo from "/assets/American_Express_logo.svg";
 
 const Card = () => {
-  const { cardholderName, cardNumber, expirationMonth, expirationYear, cvc } =
-    useForm();
+  const {
+    cardholderName,
+    cardNumber,
+    expirationMonth,
+    expirationYear,
+    cvc,
+    cardType,
+  } = useForm();
 
   const cardNumberSpacer = (cardNumber) => {
     const numArray = cardNumber.trim().replaceAll(" ", "").split("");
@@ -15,6 +23,13 @@ const Card = () => {
       spacedCardNumber.push(numArray[i]);
     }
     return spacedCardNumber.join("").trim();
+  };
+
+  const cardImage = () => {
+    if (cardType === "other" || cardType === "invalid" || cardNumber === "")
+      return cardLogo;
+    if (cardType === "visa") return visaLogo;
+    if (cardType === "amex") return amexLogo;
   };
 
   const displayNumber =
@@ -39,9 +54,9 @@ const Card = () => {
         <div className="col-start-1 row-start-1 flex flex-col">
           <div>
             <img
-              src={cardLogo}
+              src={cardImage()}
               alt="card logo"
-              className="mt-4 lg:mt-6 ml-4 lg:ml-6 h-8 lg:h-12"
+              className="mt-4 lg:mt-6 ml-4 lg:ml-6 h-8 lg:h-12 drop-shadow-[3px_3px_10px_#fff6]"
             />
           </div>
           <div className="flex flex-col mt-8 lg:mt-16 mx-6">
