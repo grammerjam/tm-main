@@ -4,7 +4,7 @@ Team MANGOJS - Main Repo
 
 ---
 
-3C Project
+## 3C Project
 
 Under tm-main/ use the folder named /project3C/
 
@@ -34,7 +34,7 @@ In data view route, add the ability to edit some user data:
 This exercise is intended to practice API access and hone your frontend skills. Please remember that any sensitive data should be handled appropriately in the backend and should not be saved as plain text.
 The proper handling of sensitive data is beyond the scope of this exercise and all data entered on the form should be fake data, for testing purposes only.
 
-**Drop-Dead Date: Monday 9 AM EST**# Mango Grammerjam Project 3 Part C
+**Drop-Dead Date: Monday 9 AM EST**
 
 ---
 
