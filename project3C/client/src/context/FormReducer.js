@@ -1,33 +1,4 @@
-export const initialFormState = {
-  cardholderName: {
-    isValid: false,
-    errorMessage: "Name is required buddy!",
-    data: "",
-  },
-  cardNumber: {
-    isValid: false,
-    errorMessage: "What's your credit card number?",
-    data: "",
-  },
-  expirationMonth: {
-    isValid: false,
-    errorMessage: "Enter two digit month.",
-    data: "",
-  },
-  expirationYear: {
-    isValid: false,
-    errorMessage: "Enter two digit year.",
-    data: "",
-  },
-  cvc: {
-    isValid: false,
-    errorMessage: "Enter your cvc code.",
-    data: "",
-  },
-  formSubmitted: false,
-  formIsValid: false,
-  cardType: "invalid",
-};
+import { initialFormState } from "./initialFormState.js";
 
 export const ACTIONS = {
   // UPDATE_FIELD: "update-field",

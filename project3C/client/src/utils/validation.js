@@ -15,3 +15,14 @@ export const amexCardCheck = /^3[47][0-9]{13}$/;
 
 export const mainCvcCheck = /^\d{3}$/;
 export const amexCvcCheck = /^\d{4}$/;
+
+/**
+ * This function will take cardholderName object to be checked and return an object
+ * @function validateName
+ * @param {Object} cardholderName The cardholder name to be tested
+ * @returns {Object} The cardholderName object
+ */
+const validateName = (cardholderName) => {
+  const { data, isValid, errorMessage } = { ...cardholderName };
+  return { data, isValid, errorMessage };
+};

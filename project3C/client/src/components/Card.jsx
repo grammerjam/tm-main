@@ -1,4 +1,4 @@
-import useForm from "../FormContext";
+import useForm from "../context/FormContext";
 import cardBack from "/assets/bg-card-back.png";
 import cardFront from "/assets/bg-card-front.png";
 import cardLogo from "/assets/card-logo.svg";

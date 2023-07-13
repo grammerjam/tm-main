@@ -1,4 +1,4 @@
-import useForm from "../FormContext";
+import useForm from "../context/FormContext";
 import completedCheck from "/assets/icon-complete.svg";
 
 const Form = () => {

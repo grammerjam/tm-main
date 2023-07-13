@@ -1,8 +1,6 @@
-import { FormContextProvider } from "../FormContext";
+import { FormContextProvider } from "../context/FormContext";
 import Card from "./Card";
-import Footer from "./Footer";
 import Form from "./Form";
-import Navbar from "./Navbar";
 
 function MainPage() {
   return (
