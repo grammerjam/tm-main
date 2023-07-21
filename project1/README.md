@@ -20,20 +20,14 @@
 <br />
 <div align="center">
   <a href="https://github.com/grammerjam/tm-main/tree/main">
-    <img src="images/mangoJS.svg" />
+    <img src="../images/project1.png" style="height:500px;width:500px;" />
   </a>
 
-<h3 align="center">MangoJS</h3>
+<h3 align="center">Project 1</h3>
 
   <p align="center">
     Bienvenue! 
     <br />
-    MangoJS features projects coded by Steve Smodish and Alex Curtis-Slep. 
-    <!-- <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a> -->
-    <br />
-    <br />
-    <a href="https://main--mango-grammerjam-p3c.netlify.app/">View Project 3C</a>
-    ·
     <a href="https://github.com/grammerjam/tm-main/issues/new">Report Bug</a>
   </p>
 </div>
@@ -51,7 +45,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
     </li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -61,18 +54,11 @@
 
 ## About MangoJS
 
-[![Project 3C Screen Shot][product-screenshot]](https://main--mango-grammerjam-p3c.netlify.app/)
-
-This project features a form for entering credit card information, and a data view to see that data. It's full stack, functional, and was fun to build!
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+This project features a responsive shape built with HTML and CSS.
 
 ### Built With
 
-- [![MongoDB][Mongodb]][Mongo-url][![Express][Expressjs]][Express-url][![React][React.js]][React-url][![Node][Node.js]][Node-url]
-- ![HTML][Html]![CSS][Css][![SASS][Sass]][Sass-url][![Tailwind][Tailwindcss]][Tailwind-url]
-- ![JavaScript][Javascript]
-- [![Netlify][NETLIFY]][Netlify-url]
+![HTML][Html]![CSS][Css]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -80,24 +66,7 @@ This project features a form for entering credit card information, and a data vi
 
 ## Getting Started
 
-Each project folder features instructions for running the individual projects locally (e.g. project1, project2, etc.).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+From the tm-main folder, go to the project1 folder, [open the index.html in a browser](https://www.indeed.com/career-advice/career-development/how-to-open-html-file), or [from VSCode](https://www.wikihow.com/Run-a-HTML-File-in-Visual-Studio-Code#:~:text=Type%20start%20followed%20by%20the,to%20preview%20your%20HTML%20file.) or another IDE.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -108,8 +77,6 @@ Don't forget to give the project a star! Thanks again!
 Steve Smodish - [GitHub](https://github.com/ssmodish)
 <br />
 Alex Curtis-Slep - [GitHub](https://github.com/AlexVCS) / [Twitter](https://twitter.com/alexcurtisslep) / alexcurtisslep@gmail.com
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 
@@ -137,21 +104,5 @@ Alex Curtis-Slep - [GitHub](https://github.com/AlexVCS) / [Twitter](https://twit
 [alex-linkedin-url]: https://www.linkedin.com/in/alexcurtisslep/
 [steve-linkedin-url]: https://www.linkedin.com/in/stevesmodish/
 [steve-linkedin-shield]: https://img.shields.io/badge/-Steve's_LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[product-screenshot]: images/3Cscreenshot.png
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Tailwindcss]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
-[Tailwind-url]: https://tailwindcss.com/
-[Mongo-url]: https://www.mongodb.com/
-[Mongodb]: https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
-[Express-url]: https://expressjs.com/
-[Expressjs]: https://img.shields.io/badge/Express.js-404D59?style=for-the-badge
-[Node-url]: https://nodejs.org/en
-[Node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
-[Sass-url]: https://sass-lang.com/
-[Sass]: https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
-[Netlify-url]: https://www.netlify.com/
-[NETLIFY]: https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white
 [Html]: https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white
 [Css]: https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
-[Javascript]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white
