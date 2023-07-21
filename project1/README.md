@@ -32,24 +32,6 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About MangoJS</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-    </li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
 <!-- ABOUT THE PROJECT -->
 
 ## About MangoJS
@@ -60,15 +42,11 @@ This project features a responsive shape built with HTML and CSS.
 
 ![HTML][Html]![CSS][Css]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 
 ## Getting Started
 
 From the tm-main folder, go to the project1 folder, [open the index.html in a browser](https://www.indeed.com/career-advice/career-development/how-to-open-html-file), or [from VSCode](https://www.wikihow.com/Run-a-HTML-File-in-Visual-Studio-Code#:~:text=Type%20start%20followed%20by%20the,to%20preview%20your%20HTML%20file.) or another IDE.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
 
