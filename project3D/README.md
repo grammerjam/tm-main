@@ -3,21 +3,21 @@
 ## Exercise:
 
 In this project, you will host your app on AWS.
-You should be able to:
 
-Access the API via the server URL
-Use the front end app normally
-Deploy changes made to the code to the server
-Use the database if at all applicable
+You should be able to:
+- Access the API via the server URL
+- Use the front end app normally
+- Deploy changes made to the code to the server
+- Use the database if at all applicable
 
 ## Deployment:
 
 You will:
-Access the AWS account provided to you
-Create a new RDS database
-Create an EC2 instance (t2.micro)
-Access the EC2 instance via SSH
-Upload the code and start the server
+- Access the AWS account provided to you
+- Create a new RDS database
+- Create an EC2 instance (t2.micro)
+- Access the EC2 instance via SSH
+- Upload the code and start the server
 
 ## Create a custom `README.md`
 
