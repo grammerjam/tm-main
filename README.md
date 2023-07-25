@@ -29,7 +29,6 @@
     Bienvenue! 
     <br />
     MangoJS features projects coded by Steve Smodish and Alex Curtis-Slep. 
-    <!-- <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a> -->
     <br />
     <br />
     <a href="https://main--mango-grammerjam-p3c.netlify.app/">View Project 3C</a>
@@ -73,6 +72,7 @@ This project features a form for entering credit card information, and a data vi
 - ![HTML][Html]![CSS][Css][![SASS][Sass]][Sass-url][![Tailwind][Tailwindcss]][Tailwind-url]
 - ![JavaScript][Javascript]
 - [![Netlify][NETLIFY]][Netlify-url]
+- [![Vite]][Vite-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -155,3 +155,5 @@ Alex Curtis-Slep - [GitHub](https://github.com/AlexVCS) / [Twitter](https://twit
 [Html]: https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white
 [Css]: https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
 [Javascript]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white
+[Vite-url]: https://vitejs.dev/
+[Vite]: https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E

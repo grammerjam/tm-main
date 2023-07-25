@@ -1,25 +1,12 @@
 <a name="readme-top"></a>
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
-<!-- <div align="center" markdown="1"> -->
-
 [![alex-linkedin-shield]][alex-linkedin-url]
 [![steve-linkedin-shield]][steve-linkedin-url]
 
-<!-- </div> -->
-
-<!-- PROJECT LOGO -->
+<!-- PROJECT SCREENSHOT -->
 <br />
 <div align="center">
-  <a href="https://github.com/grammerjam/tm-main/tree/main">
+  <a href="https://github.com/grammerjam/tm-main/tree/main/project1">
     <img src="../images/project1.png" style="height:500px;width:500px;" />
   </a>
 
@@ -34,7 +21,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About MangoJS
+## About Project 1
 
 This project features a responsive shape built with HTML and CSS.
 
@@ -55,13 +42,6 @@ From the tm-main folder, go to the project1 folder, [open the index.html in a br
 Steve Smodish - [GitHub](https://github.com/ssmodish)
 <br />
 Alex Curtis-Slep - [GitHub](https://github.com/AlexVCS) / [Twitter](https://twitter.com/alexcurtisslep) / alexcurtisslep@gmail.com
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-- Muchos gracias to Allan Tito for the feedback, encouragement, and PM'ing
-- Thanks to the senior devs from Grammerhub for reviewing our projects
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
