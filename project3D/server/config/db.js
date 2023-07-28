@@ -1,7 +1,5 @@
 import mongoose from "mongoose";
-import fs from "fs";
 import path from "path";
-import server from "../api/server";
 
 let dbCertificateObject = {
   importFile: path.join(`${process.env.SSL_CERT}`),
