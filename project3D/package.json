@@ -1,0 +1,24 @@
+{
+  "name": "project3c",
+  "version": "1.0.0",
+  "description": "Mango Grammerjam Project 3C",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w server\" \"npm run dev -w client\"",
+    "client": "npm run dev -w client",
+    "server": "npm run dev -w server"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.43.0"
+  }
+}
