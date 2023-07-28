@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
-import fs from 'fs'
-import path from 'path'
+import fs from "fs";
+import path from "path";
 import server from "../api/server";
 
 let dbCertificateObject = {
-  importFile: path.join(`${/home/ubuntu/tm-main/project3D/server/global-bundle.pem}`)
-}
+  importFile: path.join(`${process.env.SSL_CERT}`),
+};
 
 const connectDB = async () => {
   try {
