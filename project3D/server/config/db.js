@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
-import path from "path";
+import fs from "fs";
 
 let dbCertificateObject = {
-  importFile: path.join(`${process.env.SSL_CERT}`),
+  importFile: fs.readFileSync(`${process.env.SSL_CERT}`),
 };
 
 const connectDB = async () => {
