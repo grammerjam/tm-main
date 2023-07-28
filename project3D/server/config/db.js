@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import fs from "fs";
 
 let dbCertificateObject = {
-  importFile: fs.readFileSync(`${process.env.SSL_CERT}`),
+  importFile: fs.readFileSync("./global-bundle.pem"),
 };
 
 const connectDB = async () => {
