@@ -4,7 +4,7 @@ const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.DB_CONNECT, {
       ssl: true,
-      sslCA: `${__dirname}/global-bundle.pem`,
+      sslCA: `../global-bundle.pem`,
       tlsCAFile: `global-bundle.pem`,
     });
     console.log(`MongoDB Connected: ${conn.connection.host}`);
