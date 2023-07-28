@@ -4,7 +4,7 @@ import path from 'path'
 import server from "../api/server";
 
 let dbCertificateObject = {
-  importFile: path.join(`${~/tm-main/project3D/server/global-bundle.pem}`)
+  importFile: path.join(`${/home/ubuntu/tm-main/project3D/server/global-bundle.pem}`)
 }
 
 const connectDB = async () => {
