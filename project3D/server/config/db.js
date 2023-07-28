@@ -1,11 +1,18 @@
 import mongoose from "mongoose";
+import fs from 'fs'
+import path from 'path'
+import server from "../api/server";
+
+let dbCertificateObject = {
+  importFile: path.join(`${~/tm-main/project3D/server/global-bundle.pem}`)
+}
 
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.DB_CONNECT, {
       ssl: true,
-      sslValidate: true,
-      sslCA: `../global-bundle.pem`,
+      sslValidate: false,
+      sslCA: dbCertificateObject.importFile,
       tlsCAFile: `global-bundle.pem`,
     });
     console.log(`MongoDB Connected: ${conn.connection.host}`);
