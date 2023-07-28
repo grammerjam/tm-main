@@ -4,6 +4,7 @@ const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.DB_CONNECT, {
       ssl: true,
+      sslValidate: true,
       sslCA: `../global-bundle.pem`,
       tlsCAFile: `global-bundle.pem`,
     });
