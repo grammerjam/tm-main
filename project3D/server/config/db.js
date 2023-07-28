@@ -8,10 +8,7 @@ let dbCertificateObject = {
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.DB_CONNECT, {
-      ssl: true,
-      sslValidate: false,
       sslCA: dbCertificateObject.importFile,
-      tlsCAFile: `global-bundle.pem`,
     });
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
