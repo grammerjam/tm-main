@@ -1,4 +1,9 @@
 import mongoose from "mongoose";
+import fs from "fs";
+
+let dbCertificateObject = {
+  importFile: fs.readFileSync("./global-bundle.pem"),
+};
 
 const connectDB = async () => {
   try {
