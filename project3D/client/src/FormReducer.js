@@ -75,16 +75,13 @@ const formReducer = (state, action) => {
     case ACTIONS.POST_DATA:
       const postData = async (data) => {
         try {
-          const res = await fetch(
-            "https://mangogrammerjamp3c.onrender.com/api/userData",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(data),
-            }
-          );
+          const res = await fetch(`${SERVER_URL}/api/userData`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
           if (res.status === 400) {
             throw new Error("card number exists");
           }
