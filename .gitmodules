@@ -7,3 +7,15 @@
 [submodule "project2"]
 	path = project2
 	url = https://github.com/Mango-Entertainment/project2.git
+[submodule "project3"]
+	path = project3
+	url = https://github.com/Mango-Entertainment/project3.git
+[submodule "project3AB"]
+	path = project3AB
+	url = https://github.com/Mango-Entertainment/project3AB.git
+[submodule "project3C"]
+	path = project3C
+	url = https://github.com/Mango-Entertainment/project3C.git
+[submodule "project3D"]
+	path = project3D
+	url = https://github.com/Mango-Entertainment/project3D.git
