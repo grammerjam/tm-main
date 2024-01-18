@@ -19,3 +19,9 @@
 [submodule "project3D"]
 	path = project3D
 	url = https://github.com/Mango-Entertainment/project3D.git
+[submodule "project4"]
+	path = project4
+	url = https://github.com/Mango-Entertainment/project4.git
+[submodule "mango-entertainment"]
+	path = mango-entertainment
+	url = https://github.com/Mango-Entertainment/mango-entertainment.git
