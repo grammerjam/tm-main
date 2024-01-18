@@ -1,7 +1,0 @@
-{
-  "name": "tm-main",
-  "workspaces": [
-    "project3",
-    "project3c"
-  ]
-}
