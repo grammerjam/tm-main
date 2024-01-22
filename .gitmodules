@@ -1,3 +1,27 @@
 [submodule "project2/wild-deodorant"]
 	path = project2/wild-deodorant
 	url = git@github.com:smodish-grammerhub/wild-deodorant.git
+[submodule "project1"]
+	path = project1
+	url = https://github.com/Mango-Entertainment/project1.git
+[submodule "project2"]
+	path = project2
+	url = https://github.com/Mango-Entertainment/project2.git
+[submodule "project3"]
+	path = project3
+	url = https://github.com/Mango-Entertainment/project3.git
+[submodule "project3AB"]
+	path = project3AB
+	url = https://github.com/Mango-Entertainment/project3AB.git
+[submodule "project3C"]
+	path = project3C
+	url = https://github.com/Mango-Entertainment/project3C.git
+[submodule "project3D"]
+	path = project3D
+	url = https://github.com/Mango-Entertainment/project3D.git
+[submodule "project4"]
+	path = project4
+	url = https://github.com/Mango-Entertainment/project4.git
+[submodule "mango-entertainment"]
+	path = mango-entertainment
+	url = https://github.com/Mango-Entertainment/mango-entertainment.git
