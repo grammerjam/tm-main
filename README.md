@@ -3,11 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/grammerjam/tm-main/tree/main">
-    <img src="images/mangoJS.svg" />
-  </a>
-
-<h3 align="center">MangoJS</h3>
+  <img src="images/mangoJS.svg" />
 
   <p align="center">
     Bienvenue! 
@@ -18,40 +14,27 @@
   </p>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-    <li><a href="#contact">Contact</a></li>
-      <a href="#about-the-project">About MangoJS</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-    </li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
 <!-- CONTACT -->
 
 ## Contact
 
-Steve Smodish - [![steve-linkedin-shield]][steve-linkedin-url]/[GitHub][steves-github-url]
-<br />
-Alex Curtis-Slep - [![alex-linkedin-shield]][alex-linkedin-url]/[![Github logo](/images/githubIcon.svg "Github icon")][alex-github-url] / [Twitter][alex-twitter-url] / alexcurtisslep@gmail.com
+<div align='center'>
+Steve Smodish
 
+[![LinkedIn-shield]][steve-linkedin-url][![GitHub-shield]][steve-github-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+</div>
+<div align='center'>
+Alex Curtis-Slep
+
+[![LinkedIn-shield]][alex-linkedin-url][![GitHub-shield]][alex-github-url]
+
+</div>
 
 <!-- ABOUT THE PROJECT -->
 
-## About MangoJS
+## MangoJS Projects
 
-<!-- Write about US -->
 [Project1][Project1-url]
 
 This project shows off a responsive shape.
@@ -80,13 +63,11 @@ Mango Entertainment allows you to curate the ripest mix of entertainment. TV ser
 
 ### Technologies used
 
-<!-- Badge every tech!!! -->
-
 <!-- Front end tech -->
-![HTML][Html]![CSS][Css][![SASS][Sass]][Sass-url][![Tailwind][Tailwindcss]][Tailwind-url]
+[![HTML][Html]][HTML-url][![CSS][Css]][CSS-url][![SASS][Sass]][Sass-url][![Tailwind][Tailwindcss]][Tailwind-url]
 
 
-![JavaScript][Javascript][![React][React.js]][React-url][![Nextjs]][Next-js-url][![Vite]][Vite-url]
+[![JavaScript][Javascript]][Javascript-url][![React][React.js]][React-url][![Nextjs]][Next-js-url][![Vite]][Vite-url]
 
 <!-- Back end tech -->
 [![MongoDB][Mongodb]][Mongo-url][![Express][Expressjs]][Express-url][![Node][Node.js]][Node-url][![Postgres]][Postgres-url][![Supabase]][Supabase-url][![Clerk]][Clerk-url]
@@ -119,50 +100,75 @@ After that, if you want to update every project to our current versions, use thi
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 <!-- personal links -->
-[alex-linkedin-shield]: https://img.shields.io/badge/-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [alex-linkedin-url]: https://www.linkedin.com/in/alexcurtisslep/
-[steve-linkedin-url]: https://www.linkedin.com/in/stevesmodish/
-[steve-linkedin-shield]: https://img.shields.io/badge/-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [alex-github-url]: https://github.com/AlexVCS
-[steves-github-url]: https://github.com/ssmodish
-[alex-twitter-url]: https://twitter.com/alexcurtisslep
 
+[steve-linkedin-url]: https://www.linkedin.com/in/stevesmodish/
+[steve-github-url]: https://github.com/ssmodish
 
-<!-- Technology shields -->
+<!-- Technology shields and links -->
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[Tailwindcss]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
-[Mongodb]: https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
-[Sass]: https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
-[Expressjs]: https://img.shields.io/badge/Express.js-404D59?style=for-the-badge
-[Node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
-[NETLIFY]: https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white
-[Css]: https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
-[Html]: https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white
-[Javascript]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white
-[Supabase]: https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white
-[Render]: https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white
-[Nextjs]: https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white
-[Postgres]: https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white
-[Vite]: https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E
-[Git]: https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white
-[Vercel]: https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
-[Clerk]: https://img.shields.io/badge/Clerk-6C47FF.svg?style=for-the-badge&logo=Clerk&logoColor=white
+[React-url]: https://react.dev/
 
-<!-- technology links -->
-[Next-js-url]: https://www.nextjs.org
-[React-url]: https://reactjs.org/
+[Tailwindcss]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
 [Tailwind-url]: https://tailwindcss.com/
+
+[Mongodb]: https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
 [Mongo-url]: https://www.mongodb.com/
-[Express-url]: https://expressjs.com/
-[Node-url]: https://nodejs.org/en
+
+[Sass]: https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
 [Sass-url]: https://sass-lang.com/
+
+[Expressjs]: https://img.shields.io/badge/Express.js-404D59?style=for-the-badge
+[Express-url]: https://expressjs.com/
+
+[Node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
+[Node-url]: https://nodejs.org/en
+
+[NETLIFY]: https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white
 [Netlify-url]: https://www.netlify.com/
-[Vite-url]: https://vitejs.dev/
-[Render-url]: https://render.com/
+
+[Css]: https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
+[CSS-url]: https://www.w3.org/Style/CSS/Overview.en.html
+
+[Html]: https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white
+[HTML-url]: https://html.spec.whatwg.org/multipage/
+
+[Javascript]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white
+[Javascript-url]: https://ecma-international.org/publications-and-standards/standards/ecma-262/
+
+[Supabase]: https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white
 [Supabase-url]: https://supabase.com/
-[Clerk-url]: https://clerk.com/
-[Vercel-url]: https://vercel.com/[Postgres-url]: https://www.postgresql.org/
+
+[Render]: https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white
+[Render-url]: https://render.com/
+
+[Nextjs]: https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white
+[Next-js-url]: https://www.nextjs.org
+
+[Postgres]: https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white
+[Postgres-url]: https://www.postgresql.org/
+
+[Vite]: https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E
+[Vite-url]: https://vitejs.dev/
+
+[Git]: https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white
 [Git-url]: https://git-scm.com/
+
+[Vercel]: https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white
+[Vercel-url]: https://vercel.com/
+
+[Clerk]: https://img.shields.io/badge/Clerk-6C47FF.svg?style=for-the-badge&logo=Clerk&logoColor=white
+[Clerk-url]: https://clerk.com/
+
+
+<!-- [Github-Pages-shield]: https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white -->
+[GitHub-shield]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white
+[LinkedIn-shield]: https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white
+
+<!-- [Hashnode-shield]: https://img.shields.io/badge/Hashnode-2962FF?style=for-the-badge&logo=hashnode&logoColor=white -->
+<!-- [Dev.to-shield]: https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white -->
+
 
 <!-- project urls -->
 [Project1-url]: https://github.com/Mango-Entertainment/project1
